@@ -601,9 +601,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_v2cs8")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack_Melee",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -633,9 +633,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8lpvs")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Death_Melee",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -676,9 +676,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l4kai")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Hit_Melee",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -708,9 +708,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p3b6d")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"Idle_Melee",
-"speed": 2.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -742,7 +742,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Melee",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_22asu"]
@@ -806,9 +806,8 @@ script = ExtResource("25_fkdbe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ranged_Enemy" unique_id=388050453]
 sprite_frames = SubResource("SpriteFrames_vmsax")
-animation = &"Enemy_Ranged"
+animation = &"Attack_Melee"
 autoplay = "Enemy_Ranged"
-frame_progress = 0.63516706
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ranged_Enemy" unique_id=914919213]
 visible = false
@@ -827,13 +826,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vmsax")
 animation = &"Walk_Melee"
 autoplay = "Walk_Melee"
-frame = 3
-frame_progress = 0.78980094
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Melee_Enemy" unique_id=1840500641]
 visible = false
 shape = SubResource("CircleShape2D_22asu")
 
-[node name="ShootTimer" type="Timer" parent="Melee_Enemy" unique_id=672335506]
+[node name="MeleeTimer" type="Timer" parent="Melee_Enemy" unique_id=672335506]
 wait_time = 2.0
 ignore_time_scale = true
