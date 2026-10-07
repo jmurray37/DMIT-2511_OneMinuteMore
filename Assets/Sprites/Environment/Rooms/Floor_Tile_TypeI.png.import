@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjen40nk225dj"
-path="res://.godot/imported/large_Pillar.png-7f2973969e2030a0526dd5c94cd4bb0a.ctex"
+uid="uid://darb3skvfqsw0"
+path="res://.godot/imported/Floor_Tile_TypeI.png-b717e8fdb81c187b3629c79c9d9dcf09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/large_Pillar.png"
-dest_files=["res://.godot/imported/large_Pillar.png-7f2973969e2030a0526dd5c94cd4bb0a.ctex"]
+source_file="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeI.png"
+dest_files=["res://.godot/imported/Floor_Tile_TypeI.png-b717e8fdb81c187b3629c79c9d9dcf09.ctex"]
 
 [params]
 

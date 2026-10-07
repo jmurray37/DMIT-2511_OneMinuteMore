@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ihi16qncodfm"
-path="res://.godot/imported/Inner_Wall_Corner.png-5c2ff88c69afbbb3f7598d2e7a113b09.ctex"
+uid="uid://cb1ioaoo0crsb"
+path="res://.godot/imported/Floor_Tile_TypeH.png-fd01150b67b59c85aef2f40a43ebd864.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Inner_Wall_Corner.png"
-dest_files=["res://.godot/imported/Inner_Wall_Corner.png-5c2ff88c69afbbb3f7598d2e7a113b09.ctex"]
+source_file="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeH.png"
+dest_files=["res://.godot/imported/Floor_Tile_TypeH.png-fd01150b67b59c85aef2f40a43ebd864.ctex"]
 
 [params]
 

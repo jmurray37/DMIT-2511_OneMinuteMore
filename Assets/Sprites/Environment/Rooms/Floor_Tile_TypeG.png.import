@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs5pdrguj4i0k"
-path="res://.godot/imported/Barrier01_000.png-312b13fa267107527da44fa5d5163629.ctex"
+uid="uid://d267lfnvoruop"
+path="res://.godot/imported/Floor_Tile_TypeG.png-f6832d359d92e568f80133a85cfc8772.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Barrier01_000.png"
-dest_files=["res://.godot/imported/Barrier01_000.png-312b13fa267107527da44fa5d5163629.ctex"]
+source_file="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeG.png"
+dest_files=["res://.godot/imported/Floor_Tile_TypeG.png-f6832d359d92e568f80133a85cfc8772.ctex"]
 
 [params]
 

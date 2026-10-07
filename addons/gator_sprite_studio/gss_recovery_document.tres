@@ -12,40 +12,34 @@
 
 [sub_resource type="Resource" id="Resource_fwt4o"]
 script = ExtResource("1_fwt4o")
-frames_per_second = 1.0
-frame_count = 2
 
 [sub_resource type="Resource" id="Resource_37wp2"]
 script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAARBJREFUOI2Vk79KA0EQh785YmV9ldhZxHQnCAGNYAr1DSJaSkC7+CRel0D64CtoofgnIAjaaSuEVHkEi7GQ2ezdHneXqYbd+X7zY2YXSqLXTLTXTLSsRgBUw5rT7Z3M4e33hzhIXEqjCAZox3FZ46UDVXWKJpYeHDvVZHMDgM/ZnMHznRQK+OHDdUSiKthAE/JrROTfwXTU1ffJWgD20xYA48FX4GT37Jf9q0eJpqNuYdd+2mJ964SL8ycn5DsBeB0eqlhS5OBtsQCyGzG40flh7/JB3BBt73XXZ8OM8hfWtSpEBBFZCvgvrUrEX2VkSqs48esDMv958jO5frnPMGFr4KZzpHkH7TgO4Mqo853/AL1fc+GikCBlAAAAAElFTkSuQmCC")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAADNJREFUGJVjYEAC/xkY/v9nYPiPLMaILIkmwQhXgC6JrIgRlyQMMOGTJM4KQo5EAdi8CQDEiRH+3iP+vAAAAABJRU5ErkJggg==")
 
 [sub_resource type="Resource" id="Resource_tiq2r"]
-script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAOxJREFUOI1j/P//PwM2MMHOHUWi4NBORmzqmAhpNpSVZjCUlcYwEKcB6ArPP34KNwibISgG4LIFnyGM////Zzg6w+n/6WWsGBpTJ2gxMDAwMMwuuAY3AGagadRvBuuMfYxMR2c4YbU1dYIWA7eKB0Ny9EG4QcguYWBgYDg6w+k/XheceP2agYGBgcFCVBQuBtPMYvuAwTpjHyMjLBojNI3+oyvGB2DRihELMFuJBXADVlw/B08ohAxBTlRYExIpLkExANkVuAxBT9KM2PLCBDv3/+iaLURFseYHrAbAACxm0F1GtAHEAJyBSCwAAEVtcav9cwLhAAAAAElFTkSuQmCC")
-
-[sub_resource type="Resource" id="Resource_7wp06"]
 script = ExtResource("3_tiq2r")
 layer_title = "Layer 1"
-cels = Array[ExtResource("4_7wp06")]([SubResource("Resource_37wp2"), SubResource("Resource_tiq2r")])
+cels = Array[ExtResource("4_7wp06")]([SubResource("Resource_37wp2")])
+
+[sub_resource type="Resource" id="Resource_7wp06"]
+script = ExtResource("6_pucgx")
+rectangle = Rect2i(0, 0, 8, 8)
 
 [sub_resource type="Resource" id="Resource_rsv3f"]
-script = ExtResource("6_pucgx")
-rectangle = Rect2i(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_pucgx"]
 script = ExtResource("8_7bywy")
 cells = PackedInt32Array(-1)
 
-[sub_resource type="Resource" id="Resource_xtkou"]
+[sub_resource type="Resource" id="Resource_pucgx"]
 script = ExtResource("9_x8j34")
 source_png = PackedByteArray()
 
 [resource]
 script = ExtResource("5_rsv3f")
-canvas_size = Vector2i(16, 16)
+canvas_size = Vector2i(8, 8)
 palette = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.25, 0.72, 0.32, 1, 0.12, 0.22, 0.16, 1)
-layers = Array[ExtResource("3_tiq2r")]([SubResource("Resource_7wp06")])
-tileset = SubResource("Resource_xtkou")
-tilemap = SubResource("Resource_pucgx")
+layers = Array[ExtResource("3_tiq2r")]([SubResource("Resource_tiq2r")])
+tileset = SubResource("Resource_pucgx")
+tilemap = SubResource("Resource_rsv3f")
 animations = Array[ExtResource("1_fwt4o")]([SubResource("Resource_fwt4o")])
-slices = Array[ExtResource("6_pucgx")]([SubResource("Resource_rsv3f")])
+slices = Array[ExtResource("6_pucgx")]([SubResource("Resource_7wp06")])

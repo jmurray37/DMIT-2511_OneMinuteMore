@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b65ryeu6o58ty"
-path="res://.godot/imported/Outer_Wall_Corner.png-9a19cc2da3ae1fd3c758926d14782739.ctex"
+uid="uid://dtp5lw0n2v7b4"
+path="res://.godot/imported/Wall_Face.png-c8738034eedb23d171f3e6bf40bc920d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Outer_Wall_Corner.png"
-dest_files=["res://.godot/imported/Outer_Wall_Corner.png-9a19cc2da3ae1fd3c758926d14782739.ctex"]
+source_file="res://Assets/Sprites/Environment/Rooms/Wall_Face.png"
+dest_files=["res://.godot/imported/Wall_Face.png-c8738034eedb23d171f3e6bf40bc920d.ctex"]
 
 [params]
 

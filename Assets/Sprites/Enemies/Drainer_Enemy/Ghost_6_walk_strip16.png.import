@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu47t68drist8"
-path="res://.godot/imported/Floor_Tile_TypeC.png-05f34136abb2fe13a20287b6523967b9.ctex"
+uid="uid://ieeepl4mrfmu"
+path="res://.godot/imported/Ghost_6_walk_strip16.png-05b5cd721b888fd4aaffa65a4740f710.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Floor_Tile_TypeC.png"
-dest_files=["res://.godot/imported/Floor_Tile_TypeC.png-05f34136abb2fe13a20287b6523967b9.ctex"]
+source_file="res://Assets/Sprites/Enemies/Drainer_Enemy/Ghost_6_walk_strip16.png"
+dest_files=["res://.godot/imported/Ghost_6_walk_strip16.png-05b5cd721b888fd4aaffa65a4740f710.ctex"]
 
 [params]
 

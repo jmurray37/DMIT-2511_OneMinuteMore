@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cciibuaqcfq5h"
-path="res://.godot/imported/OMM_Room+Timer_Concept.png-a0de322422322a2ee79f8351c4fae3d9.ctex"
+uid="uid://ihi16qncodfm"
+path="res://.godot/imported/Inner_Wall_Corner.png-2ea2a7384bcecea486eaac9e99c9df04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/OMM_Room+Timer_Concept.png"
-dest_files=["res://.godot/imported/OMM_Room+Timer_Concept.png-a0de322422322a2ee79f8351c4fae3d9.ctex"]
+source_file="res://Assets/Sprites/Environment/Rooms/Inner_Wall_Corner.png"
+dest_files=["res://.godot/imported/Inner_Wall_Corner.png-2ea2a7384bcecea486eaac9e99c9df04.ctex"]
 
 [params]
 

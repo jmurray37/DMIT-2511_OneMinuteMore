@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj14dcgwxyrqe"
-path="res://.godot/imported/Floor_Tile_TypeD.png-7cbe45e416bc09234fc4d8ae06cfebeb.ctex"
+uid="uid://cffsidj1bnren"
+path="res://.godot/imported/Projectile_Enemy_000.png-87578e38230892297c39d1b0e5de9d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Floor_Tile_TypeD.png"
-dest_files=["res://.godot/imported/Floor_Tile_TypeD.png-7cbe45e416bc09234fc4d8ae06cfebeb.ctex"]
+source_file="res://Assets/Sprites/Enemies/Attacks_Enemy/Projectile_Enemy_000.png"
+dest_files=["res://.godot/imported/Projectile_Enemy_000.png-87578e38230892297c39d1b0e5de9d73.ctex"]
 
 [params]
 
