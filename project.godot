@@ -22,6 +22,10 @@ window/size/viewport_height=256
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="One_Minute_More"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gator_sprite_studio/plugin.cfg")
