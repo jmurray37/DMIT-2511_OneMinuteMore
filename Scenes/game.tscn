@@ -824,7 +824,7 @@ script = ExtResource("25_fkdbe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Melee_Enemy" unique_id=881337697]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vmsax")
-animation = &"Walk_Melee"
+animation = &"Idle_Melee"
 autoplay = "Walk_Melee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Melee_Enemy" unique_id=1840500641]
