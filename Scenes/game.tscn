@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://ihi16qncodfm" path="res://Assets/Sprites/Environment/Rooms/Inner_Wall_Corner.png" id="14_nb51f"]
 [ext_resource type="Texture2D" uid="uid://darb3skvfqsw0" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeI.png" id="15_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://cu47t68drist8" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeC.png" id="15_nb51f"]
-[ext_resource type="PackedScene" uid="uid://c6jh20i3xfxn5" path="res://Scenes/Enemies/ranged_enemy.tscn" id="26_fkdbe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4fw4"]
 atlas = ExtResource("8_v158k")
@@ -378,6 +377,3 @@ animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/MeleeHitbox" unique_id=237845618]
 shape = SubResource("RectangleShape2D_1xhw0")
-
-[node name="RangedEnemy" parent="." unique_id=1242893249 instance=ExtResource("26_fkdbe")]
-position = Vector2(178, 112)

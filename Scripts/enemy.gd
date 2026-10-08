@@ -10,6 +10,9 @@ extends CharacterBody2D
 # without breaking the health-based reward system.
 @export var time_reward_multiplier: float = 1.0
 
+# Used by the room spawner when building encounters.
+@export var encounter_cost: int = 1
+
 var current_health: int = 0
 var player: Node2D = null
 
