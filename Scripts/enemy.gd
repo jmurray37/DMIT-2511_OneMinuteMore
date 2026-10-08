@@ -1,63 +1,94 @@
-extends Node2D
+extends CharacterBody2D
 
-@export var speed: float = 40.0
-@export var stopping_distance: float = 40.0
+@export var max_health: int = 3
 
+# Base rule:
+# Every 1 HP is worth 2 seconds when this enemy dies.
+@export var time_per_health: float = 2.0
+
+# Lets individual enemies be worth more or less
+# without breaking the health-based reward system.
+@export var time_reward_multiplier: float = 1.0
+
+var current_health: int = 0
 var player: Node2D = null
-@onready var shoot_timer: Timer = find_child("ShootTimer", true, false) as Timer
 
-var projectile_scene: PackedScene = preload(
-	"res://Scenes/Enemies/enemy_projectile.tscn"
-)
 
 func _ready() -> void:
+	add_to_group("enemy")
+
+	current_health = max_health
+
+	find_player()
+
+
+func find_player() -> void:
 	player = get_tree().get_first_node_in_group("player") as Node2D
 
 	if player == null:
-		player = get_tree().current_scene.find_child("Player", true, false) as Node2D
-		print("Player found by name: ", player)
-	else:
-		print("Player found in group: ", player)
+		player = get_tree().current_scene.find_child(
+			"Player",
+			true,
+			false
+		) as Node2D
 
 	if player == null:
-		print("ERROR: no player found. Add Player to the 'player' group or name the node 'Player'")
+		print("ERROR: Enemy could not find Player Guy")
 
-	if shoot_timer == null:
-		print("ShootTimer not found, creating one in code")
-		shoot_timer = Timer.new()
-		shoot_timer.name = "ShootTimer"
-		add_child(shoot_timer)
 
-	shoot_timer.wait_time = 2.0
-	shoot_timer.one_shot = false
-	shoot_timer.timeout.connect(shoot)
-	shoot_timer.start()
-
-	print("SHOOT TIMER STARTED")
-
-func _physics_process(delta: float) -> void:
-	if player == null:
+func take_damage(amount: int) -> void:
+	if amount <= 0:
 		return
 
-	var distance_to_player := global_position.distance_to(player.global_position)
+	current_health -= amount
 
-	if distance_to_player > stopping_distance:
-		var direction := global_position.direction_to(player.global_position)
-		global_position += direction * speed * delta
+	current_health = max(
+		current_health,
+		0
+	)
 
-func shoot() -> void:
-	print("ENEMY GUY FIRED")
+	print(
+		name,
+		" HP: ",
+		current_health,
+		"/",
+		max_health
+	)
 
-	if player == null:
-		print("SHOOT FAILED: player is null")
+	if current_health <= 0:
+		die()
+
+
+func get_time_reward() -> float:
+	return (
+		float(max_health)
+		* time_per_health
+		* time_reward_multiplier
+	)
+
+
+func give_time_reward() -> void:
+	var game: Node = get_tree().current_scene
+
+	if not game.has_method("add_time"):
+		print("ERROR: Game scene does not have add_time()")
 		return
 
-	var projectile = projectile_scene.instantiate()
-	projectile.direction = global_position.direction_to(player.global_position)
-	projectile.shooter = self
+	var reward: float = get_time_reward()
 
-	get_tree().current_scene.add_child(projectile)
-	projectile.global_position = global_position
-	projectile.z_index = 10
+	game.add_time(reward)
 
-	print("PROJECTILE SPAWNED at ", projectile.global_position, " direction ", projectile.direction)
+	print(
+		name,
+		" returned ",
+		reward,
+		" seconds"
+	)
+
+
+func die() -> void:
+	give_time_reward()
+
+	print(name, " DIED")
+
+	queue_free()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6jh20i3xfxn5"]
 
-[ext_resource type="Script" uid="uid://2mxfpph0o6dn" path="res://Scripts/enemy.gd" id="1_brae5"]
+[ext_resource type="Script" uid="uid://cpvm7rtkkn8tv" path="res://Scenes/Enemies/ranged_enemy.gd" id="1_3oe0o"]
 [ext_resource type="Texture2D" uid="uid://cfupbkafvwn35" path="res://Assets/Sprites/Enemies/Melee_Enemy/spr_Armored_Skeleton_attack_strip9.png" id="2_d1ngy"]
 [ext_resource type="Texture2D" uid="uid://mm575pv2fk3a" path="res://Assets/Sprites/Enemies/Melee_Enemy/spr_Armored_Skeleton_death_strip9.png" id="3_6s4qv"]
 [ext_resource type="Texture2D" uid="uid://cx2kmykjj2mnh" path="res://Assets/Sprites/Enemies/Ranged_Enemy/EnemyGuy_sheet.png" id="4_3qrsr"]
@@ -612,7 +612,7 @@ radius = 5.0
 [node name="RangedEnemy" type="Node2D" unique_id=1242893249]
 
 [node name="Ranged_Enemy" type="CharacterBody2D" parent="." unique_id=347999575]
-script = ExtResource("1_brae5")
+script = ExtResource("1_3oe0o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ranged_Enemy" unique_id=1010767766]
 sprite_frames = SubResource("SpriteFrames_1axap")
@@ -620,7 +620,7 @@ animation = &"Enemy_Ranged"
 autoplay = "Enemy_Ranged"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ranged_Enemy" unique_id=926534344]
-visible = false
+scale = Vector2(1.75, 1.75)
 shape = SubResource("CircleShape2D_jsbb2")
 
 [node name="ShootTimer" type="Timer" parent="Ranged_Enemy" unique_id=1666504330]
