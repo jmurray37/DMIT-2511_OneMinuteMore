@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cv0p3ruhp7cqc"]
+
+[ext_resource type="Script" uid="uid://bs5kajwvm01ja" path="res://Scenes/Player/player_projectile.gd" id="1_3dj4h"]
+[ext_resource type="Texture2D" uid="uid://xho426lxdmnf" path="res://Assets/Sprites/Player/Attacks_Player/Player_Ranged.png" id="1_qmm01"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtkou"]
+
+[node name="PlayerProjectile" type="Area2D" unique_id=1897387979]
+script = ExtResource("1_3dj4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414189641]
+rotation = -0.7846561
+scale = Vector2(0.001, 0.001)
+texture = ExtResource("1_qmm01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=763121984]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_xtkou")

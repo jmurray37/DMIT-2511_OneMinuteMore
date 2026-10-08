@@ -9,6 +9,7 @@ const HOURGLASS_FRAMES: int = 13
 @onready var timer_label: Label = $CanvasLayer/Label
 @onready var hourglass: AnimatedSprite2D = $CanvasLayer/Hourglass
 
+
 func _process(delta: float) -> void:
 	if is_dead:
 		return
@@ -16,12 +17,21 @@ func _process(delta: float) -> void:
 	time_left -= delta
 
 	if time_left <= 0.0:
-		time_left = 0.0
-		is_dead = true
-		print("YOU DIED")
+		die()
 
 	timer_label.text = "%.1f" % time_left
 	update_hourglass()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not is_dead:
+		return
+
+	if event is InputEventKey:
+		if event.pressed and not event.echo:
+			if event.keycode == KEY_R:
+				restart_game()
+
 
 func update_hourglass() -> void:
 	if time_left <= 0.0:
@@ -34,12 +44,16 @@ func update_hourglass() -> void:
 	frame_index = clamp(frame_index, 0, 11)
 	hourglass.frame = frame_index
 
+
 func add_time(amount: float) -> void:
 	if is_dead:
 		return
 
 	time_left = min(time_left + amount, MAX_TIME)
+
+	timer_label.text = "%.1f" % time_left
 	update_hourglass()
+
 
 func drain_time(amount: float) -> void:
 	if is_dead:
@@ -49,8 +63,26 @@ func drain_time(amount: float) -> void:
 	time_left = max(time_left, 0.0)
 
 	if time_left <= 0.0:
-		time_left = 0.0
-		is_dead = true
-		print("YOU DIED")
+		die()
+		return
 
+	timer_label.text = "%.1f" % time_left
 	update_hourglass()
+
+
+func die() -> void:
+	if is_dead:
+		return
+
+	time_left = 0.0
+	is_dead = true
+
+	timer_label.text = "0.0"
+	update_hourglass()
+
+	print("YOU DIED")
+	print("PRESS R TO RESTART")
+
+
+func restart_game() -> void:
+	get_tree().reload_current_scene()
