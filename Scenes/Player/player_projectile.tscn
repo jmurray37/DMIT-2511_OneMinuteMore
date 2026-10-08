@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cv0p3ruhp7cqc"]
 
-[ext_resource type="Script" uid="uid://bs5kajwvm01ja" path="res://Scenes/Player/player_projectile.gd" id="1_3dj4h"]
+[ext_resource type="Script" uid="uid://bs5kajwvm01ja" path="res://Scripts/Player_Scripts/player_projectile.gd" id="1_3dj4h"]
 [ext_resource type="Texture2D" uid="uid://xho426lxdmnf" path="res://Assets/Sprites/Player/Attacks_Player/Player_Ranged.png" id="1_qmm01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtkou"]

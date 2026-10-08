@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cig1c7cntprlm"]
 
-[ext_resource type="Script" uid="uid://cuhwtts22ggpk" path="res://Scripts/drainer_enemy.gd" id="1_12vhg"]
+[ext_resource type="Script" uid="uid://cuhwtts22ggpk" path="res://Scripts/Enemy_Scripts/drainer_enemy.gd" id="1_12vhg"]
 [ext_resource type="Texture2D" uid="uid://cfupbkafvwn35" path="res://Assets/Sprites/Enemies/Melee_Enemy/spr_Armored_Skeleton_attack_strip9.png" id="2_hrgpv"]
 [ext_resource type="Texture2D" uid="uid://mm575pv2fk3a" path="res://Assets/Sprites/Enemies/Melee_Enemy/spr_Armored_Skeleton_death_strip9.png" id="3_ms1uj"]
 [ext_resource type="Texture2D" uid="uid://cx2kmykjj2mnh" path="res://Assets/Sprites/Enemies/Ranged_Enemy/EnemyGuy_sheet.png" id="4_dhuww"]
@@ -614,6 +614,9 @@ radius = 5.0
 [node name="Drainer_Enemy" type="CharacterBody2D" parent="." unique_id=1527934899]
 position = Vector2(0, -2)
 script = ExtResource("1_12vhg")
+max_health = 4
+time_reward_multiplier = 1.25
+encounter_cost = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drainer_Enemy" unique_id=391613636]
 scale = Vector2(0.5, 0.5)

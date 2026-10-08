@@ -382,6 +382,6 @@ animation = &"walk_up"
 shape = SubResource("RectangleShape2D_1xhw0")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=598319754]
-position = Vector2(123, 114)
+position = Vector2(41, 41)
 script = ExtResource("21_exi56")
 enemy_scenes = Array[PackedScene]([ExtResource("22_7t8sx"), ExtResource("23_mg4q0")])

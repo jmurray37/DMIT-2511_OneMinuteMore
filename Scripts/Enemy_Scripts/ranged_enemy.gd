@@ -1,4 +1,4 @@
-extends "res://Scripts/enemy.gd"
+extends "res://Scripts/Enemy_Scripts/enemy.gd"
 
 @export var speed: float = 40.0
 @export var stopping_distance: float = 40.0
