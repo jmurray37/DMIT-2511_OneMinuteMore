@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://b2cgnx6xbw85v" path="res://Scripts/room_enemy_spawner.gd" id="21_exi56"]
 [ext_resource type="PackedScene" uid="uid://cig1c7cntprlm" path="res://Scenes/Enemies/drainer_enemy.tscn" id="22_7t8sx"]
 [ext_resource type="PackedScene" uid="uid://c6jh20i3xfxn5" path="res://Scenes/Enemies/ranged_enemy.tscn" id="23_mg4q0"]
+[ext_resource type="PackedScene" uid="uid://ecp115tb7261" path="res://Scenes/Enemies/melee_enemy.tscn" id="24_vm72l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4fw4"]
 atlas = ExtResource("8_v158k")
@@ -334,6 +335,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xhw0"]
+size = Vector2(10, 15)
 
 [node name="game" type="Node2D" unique_id=156642472]
 script = ExtResource("1_qxrlw")
@@ -379,9 +381,10 @@ animation = &"walk_up"
 [node name="MeleeHitbox" type="Area2D" parent="Player" unique_id=667227625]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/MeleeHitbox" unique_id=237845618]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_1xhw0")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=598319754]
 position = Vector2(123, 114)
 script = ExtResource("21_exi56")
-enemy_scenes = Array[PackedScene]([ExtResource("22_7t8sx"), ExtResource("23_mg4q0")])
+enemy_scenes = Array[PackedScene]([ExtResource("22_7t8sx"), ExtResource("23_mg4q0"), ExtResource("24_vm72l")])
