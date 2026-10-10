@@ -217,7 +217,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ony87")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack_Melee",
 "speed": 9.0
 }, {
@@ -363,7 +363,7 @@ encounter_cost = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1377848789]
 sprite_frames = SubResource("SpriteFrames_xtkou")
-animation = &"Walk_Melee"
+animation = &"Attack_Melee"
 autoplay = "Walk_Melee"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1899746086]

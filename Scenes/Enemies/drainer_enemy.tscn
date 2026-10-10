@@ -614,6 +614,8 @@ radius = 5.0
 [node name="Drainer_Enemy" type="CharacterBody2D" parent="." unique_id=1527934899]
 position = Vector2(0, -2)
 script = ExtResource("1_12vhg")
+drain_range = 100.0
+flee_range = 50.0
 max_health = 4
 time_reward_multiplier = 1.25
 encounter_cost = 5
@@ -626,7 +628,6 @@ autoplay = "Walk_Time_Thief"
 frame_progress = 0.15798576
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drainer_Enemy" unique_id=2129231947]
-visible = false
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_la6v2")
 

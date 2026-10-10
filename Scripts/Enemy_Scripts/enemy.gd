@@ -1,3 +1,4 @@
+class_name Enemy
 extends CharacterBody2D
 
 @export var max_health: int = 3
@@ -61,7 +62,6 @@ func take_damage(amount: int) -> void:
 	if current_health <= 0:
 		die()
 
-
 func get_time_reward() -> float:
 	return (
 		float(max_health)
@@ -77,7 +77,7 @@ func give_time_reward() -> void:
 		print("ERROR: Game scene does not have add_time()")
 		return
 
-	var reward: float = get_time_reward()
+	var reward: float = self.get_time_reward()
 
 	game.add_time(reward)
 
@@ -90,7 +90,7 @@ func give_time_reward() -> void:
 
 
 func die() -> void:
-	give_time_reward()
+	self.give_time_reward()
 
 	print(name, " DIED")
 

@@ -1,4 +1,5 @@
-extends "res://Scripts/Enemy_Scripts/enemy.gd"
+class_name MeleeEnemy
+extends Enemy
 
 @export var speed: float = 50.0
 @export var stopping_distance: float = 10.0

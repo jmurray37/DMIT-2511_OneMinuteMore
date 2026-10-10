@@ -1,3 +1,4 @@
+class_name PlayerProjectile
 extends Area2D
 
 @export var speed: float = 180.0
