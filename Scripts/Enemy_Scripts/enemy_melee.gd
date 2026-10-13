@@ -50,6 +50,9 @@ func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = global_position.direction_to(
 		player.global_position
 	)
+	
+	if direction.x != 0:
+		animated_sprite.flip_h = (direction.x < 0)
 
 	update_attack_area(direction)
 

@@ -618,7 +618,7 @@ drain_range = 100.0
 flee_range = 50.0
 max_health = 4
 time_reward_multiplier = 1.25
-encounter_cost = 5
+encounter_cost = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Drainer_Enemy" unique_id=391613636]
 scale = Vector2(0.5, 0.5)
