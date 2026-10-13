@@ -1,0 +1,60 @@
+{
+	"animation": "default",
+	"canvas_size": [
+		16,
+		16
+	],
+	"export_name": "Ranged_Death",
+	"frame_count": 4,
+	"frames": [
+		{
+			"height": 16,
+			"index": 0,
+			"width": 16,
+			"x": 0,
+			"y": 0
+		},
+		{
+			"height": 16,
+			"index": 1,
+			"width": 16,
+			"x": 16,
+			"y": 0
+		},
+		{
+			"height": 16,
+			"index": 2,
+			"width": 16,
+			"x": 32,
+			"y": 0
+		},
+		{
+			"height": 16,
+			"index": 3,
+			"width": 16,
+			"x": 48,
+			"y": 0
+		}
+	],
+	"frames_per_second": 3.0,
+	"sheet": {
+		"columns": 4,
+		"frame_height": 16,
+		"frame_width": 16,
+		"rows": 1
+	},
+	"slices": [
+		{
+			"height": 16,
+			"name": "Sprite",
+			"pivot": [
+				0.5,
+				0.5
+			],
+			"width": 16,
+			"x": 0,
+			"y": 0
+		}
+	],
+	"tags": []
+}
