@@ -45,11 +45,7 @@ func take_damage(amount: int) -> void:
 		return
 
 	current_health -= amount
-
-	current_health = max(
-		current_health,
-		0
-	)
+	current_health = max(current_health, 0)
 
 	print(
 		name,
@@ -61,6 +57,7 @@ func take_damage(amount: int) -> void:
 
 	if current_health <= 0:
 		die()
+
 
 func get_time_reward() -> float:
 	return (
@@ -79,7 +76,12 @@ func give_time_reward() -> void:
 
 	var reward: float = self.get_time_reward()
 
+	# Give the time immediately.
 	game.add_time(reward)
+
+	# Spawn the visual healing orb if the game supports it.
+	if game.has_method("spawn_time_orb"):
+		game.spawn_time_orb(global_position)
 
 	print(
 		name,
@@ -91,6 +93,7 @@ func give_time_reward() -> void:
 
 func die() -> void:
 	self.give_time_reward()
+	
 
 	print(name, " DIED")
 

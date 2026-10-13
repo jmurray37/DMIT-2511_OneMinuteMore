@@ -1,3 +1,4 @@
+
 extends Node2D
 
 var time_left: float = 60.0
@@ -6,8 +7,11 @@ var is_dead: bool = false
 const MAX_TIME: float = 60.0
 const HOURGLASS_FRAMES: int = 13
 
+const TIME_ORB_SCENE: PackedScene = preload("res://Scenes/Ui/TimeOrb.tscn")
+
 @onready var timer_label: Label = $CanvasLayer/Label
 @onready var hourglass: AnimatedSprite2D = $CanvasLayer/Hourglass
+@onready var time_orbs: Node2D = $CanvasLayer/TimeOrbs
 
 
 func _process(delta: float) -> void:
@@ -68,6 +72,38 @@ func drain_time(amount: float) -> void:
 
 	timer_label.text = "%.1f" % time_left
 	update_hourglass()
+
+
+func spawn_time_orb(enemy_position: Vector2) -> void:
+	if is_dead:
+		return
+
+	var orb: Node2D = TIME_ORB_SCENE.instantiate() as Node2D
+
+	time_orbs.add_child(orb)
+
+	# Convert the enemy's world position to screen coordinates.
+	var screen_position: Vector2 = (
+		get_viewport().get_canvas_transform() * enemy_position
+	)
+
+	orb.global_position = screen_position
+
+	# Find the visible center of the hourglass sprite.
+	var frame_texture: Texture2D = hourglass.sprite_frames.get_frame_texture(
+		hourglass.animation,
+		hourglass.frame
+	)
+
+	var hourglass_center: Vector2 = hourglass.global_position
+
+	if frame_texture != null:
+		hourglass_center = hourglass.to_global(
+			frame_texture.get_size() / 2.0
+		)
+
+	# Send the orb toward the hourglass.
+	orb.call("fly_to", hourglass_center)
 
 
 func die() -> void:

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bmhnb6ekfrske"]
+
+[ext_resource type="Script" uid="uid://b37hw4ctfu1sk" path="res://Scenes/Ui/time_orb.gd" id="1_5mjgd"]
+[ext_resource type="Texture2D" uid="uid://ckfkvsj3clcoq" path="res://Assets/Sprites/UI/Time_Healing_Asset.png" id="1_mctjb"]
+
+[node name="TimeOrb" type="Node2D" unique_id=808189720]
+script = ExtResource("1_5mjgd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=731445518]
+texture = ExtResource("1_mctjb")

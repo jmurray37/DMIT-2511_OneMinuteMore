@@ -364,6 +364,9 @@ sprite_frames = SubResource("SpriteFrames_sy8nv")
 animation = &"hourglass_drain"
 centered = false
 
+[node name="TimeOrbs" type="Node2D" parent="CanvasLayer" unique_id=1914160688]
+position = Vector2(23, 7)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1018095043]
 anchor_mode = 0
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GatorSpriteDocument" format=4 uid="uid://djvmoull763y6"]
+[gd_resource type="Resource" script_class="GatorSpriteDocument" format=4 uid="uid://b781jeyhu0brj"]
 
 [ext_resource type="Script" uid="uid://djgd24ekkf1o1" path="res://addons/gator_sprite_studio/core/gator_sprite_animation.gd" id="1_fwt4o"]
 [ext_resource type="Script" uid="uid://cn7je47j0pcrs" path="res://addons/gator_sprite_studio/core/gator_sprite_layer_group.gd" id="2_37wp2"]
@@ -15,7 +15,7 @@ script = ExtResource("1_fwt4o")
 
 [sub_resource type="Resource" id="Resource_37wp2"]
 script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAADNJREFUGJVjYEAC/xkY/v9nYPiPLMaILIkmwQhXgC6JrIgRlyQMMOGTJM4KQo5EAdi8CQDEiRH+3iP+vAAAAABJRU5ErkJggg==")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAADZJREFUGJVjYEACiTe7/yfe7P6PLMaILIksMV+9lBGuAF0SWREjLkkYYMInSZwVhByJArB5EwDU9B3chv+LAQAAAABJRU5ErkJggg==")
 
 [sub_resource type="Resource" id="Resource_tiq2r"]
 script = ExtResource("3_tiq2r")
