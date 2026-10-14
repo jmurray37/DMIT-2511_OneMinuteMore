@@ -1,4 +1,7 @@
+
 extends Node2D
+
+signal encounter_cleared
 
 @export var encounter_budget: int = 5
 
@@ -14,12 +17,26 @@ extends Node2D
 @export var minimum_enemy_distance: float = 24.0
 @export var max_spawn_attempts: int = 100
 
+# Portal settings
+@export var portal_spawn_position: Vector2 = Vector2(128, 128)
+
+const PORTAL_SCENE: PackedScene = preload(
+	"res://Scenes/Rooms/Portal.tscn"
+)
+
 var player: Node2D = null
 var used_spawn_positions: Array[Vector2] = []
+
+var spawned_enemies: Array[Enemy] = []
+
+var encounter_started: bool = false
+var room_cleared: bool = false
 
 
 func _ready() -> void:
 	randomize()
+
+	encounter_cleared.connect(spawn_portal)
 
 	# Wait until the scene has finished creating its children.
 	await get_tree().process_frame
@@ -29,10 +46,56 @@ func _ready() -> void:
 	spawn_encounter()
 
 
+func _process(_delta: float) -> void:
+	if not encounter_started:
+		return
+
+	if room_cleared:
+		return
+
+	# Check whether any spawned enemy is still alive.
+	for enemy: Enemy in spawned_enemies:
+		if not is_instance_valid(enemy):
+			continue
+
+		if enemy.is_queued_for_deletion():
+			continue
+
+		if enemy.current_health > 0:
+			return
+
+	# No living enemies remain.
+	room_cleared = true
+
+	print("ENCOUNTER CLEARED!")
+
+	encounter_cleared.emit()
+
+
+func spawn_portal() -> void:
+	var portal: Node2D = PORTAL_SCENE.instantiate() as Node2D
+
+	if portal == null:
+		push_error("Portal scene root must inherit Node2D.")
+		return
+
+	get_tree().current_scene.add_child(portal)
+
+	portal.global_position = portal_spawn_position
+
+	print("PURPLE PORTAL SPAWNED!")
+
+
 func spawn_encounter() -> void:
 	if enemy_scenes.is_empty():
 		print("ERROR: EnemySpawner has no enemy scenes assigned")
 		return
+
+	used_spawn_positions.clear()
+	spawned_enemies.clear()
+
+	encounter_started = false
+	room_cleared = false
 
 	var remaining_budget: int = encounter_budget
 
@@ -74,6 +137,15 @@ func spawn_encounter() -> void:
 			chosen_cost,
 			" points. Remaining budget: ",
 			remaining_budget
+		)
+
+	if not spawned_enemies.is_empty():
+		encounter_started = true
+
+		print(
+			"Encounter started with ",
+			spawned_enemies.size(),
+			" enemies"
 		)
 
 
@@ -173,6 +245,16 @@ func spawn_enemy(
 
 	if enemy_instance is Node2D:
 		enemy_instance.global_position = spawn_position
+
+	var enemy_body: Node = find_enemy_body(enemy_instance)
+
+	if enemy_body is Enemy:
+		spawned_enemies.append(enemy_body as Enemy)
+	else:
+		push_warning(
+			"Spawned enemy has no Enemy script: "
+			+ enemy_scene.resource_path
+		)
 
 
 func get_enemy_cost(enemy_scene: PackedScene) -> int:

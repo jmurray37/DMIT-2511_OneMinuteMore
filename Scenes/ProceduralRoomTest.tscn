@@ -1,67 +1,12 @@
 [gd_scene format=4 uid="uid://bb72v0fmr8ach"]
 
 [ext_resource type="Script" uid="uid://chihf2fq0xee3" path="res://Scenes/room_generator.gd" id="1_0y6gs"]
-[ext_resource type="Texture2D" uid="uid://cotjae56tti1l" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeA.png" id="1_o7id0"]
-[ext_resource type="Texture2D" uid="uid://c5gxi14dxyuj6" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeB.png" id="2_0y6gs"]
-[ext_resource type="Texture2D" uid="uid://cu47t68drist8" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeC.png" id="3_e3twe"]
-[ext_resource type="Texture2D" uid="uid://cj14dcgwxyrqe" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeD.png" id="4_nmre4"]
-[ext_resource type="Texture2D" uid="uid://bsdsuplo6e6u6" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeE.png" id="5_s8i7n"]
-[ext_resource type="Texture2D" uid="uid://d4giqyv30765f" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeF.png" id="6_7fc50"]
-[ext_resource type="Texture2D" uid="uid://d267lfnvoruop" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeG.png" id="7_68fl3"]
-[ext_resource type="Texture2D" uid="uid://cb1ioaoo0crsb" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeH.png" id="8_ynypo"]
-[ext_resource type="Texture2D" uid="uid://darb3skvfqsw0" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeI.png" id="9_1s8b0"]
+[ext_resource type="TileSet" uid="uid://c0ksa3j127qdk" path="res://Assets/Sprites/Environment/Rooms/Floor_Tileset.tres" id="2_b3dv4"]
 [ext_resource type="Texture2D" uid="uid://ihi16qncodfm" path="res://Assets/Sprites/Environment/Rooms/Inner_Wall_Corner.png" id="10_rvcjh"]
 [ext_resource type="Texture2D" uid="uid://b65ryeu6o58ty" path="res://Assets/Sprites/Environment/Rooms/Outer_Wall_Corner.png" id="11_x02m6"]
 [ext_resource type="Texture2D" uid="uid://dtp5lw0n2v7b4" path="res://Assets/Sprites/Environment/Rooms/Wall_Face.png" id="12_qxt0g"]
 [ext_resource type="Texture2D" uid="uid://7gkjyolwwf8t" path="res://Assets/Sprites/Environment/Rooms/Wall_Top.png" id="13_sjklq"]
 [ext_resource type="SpriteFrames" uid="uid://gx5sfe8y1pue" path="res://Assets/Sprites/new_sprite_frames.tres" id="15_e3twe"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3cleo"]
-texture = ExtResource("1_o7id0")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rrn0"]
-texture = ExtResource("2_0y6gs")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xoqu"]
-texture = ExtResource("3_e3twe")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2glrh"]
-texture = ExtResource("4_nmre4")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhb41"]
-texture = ExtResource("5_s8i7n")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixi7b"]
-texture = ExtResource("6_7fc50")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2qfu"]
-texture = ExtResource("7_68fl3")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jg2gf"]
-texture = ExtResource("8_ynypo")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm82u"]
-texture = ExtResource("9_1s8b0")
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_xtkou"]
-sources/0 = SubResource("TileSetAtlasSource_3cleo")
-sources/1 = SubResource("TileSetAtlasSource_8rrn0")
-sources/2 = SubResource("TileSetAtlasSource_3xoqu")
-sources/3 = SubResource("TileSetAtlasSource_2glrh")
-sources/4 = SubResource("TileSetAtlasSource_hhb41")
-sources/5 = SubResource("TileSetAtlasSource_ixi7b")
-sources/6 = SubResource("TileSetAtlasSource_e2qfu")
-sources/7 = SubResource("TileSetAtlasSource_jg2gf")
-sources/8 = SubResource("TileSetAtlasSource_pm82u")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc628"]
 texture = ExtResource("10_rvcjh")
@@ -89,7 +34,7 @@ sources/3 = SubResource("TileSetAtlasSource_hwsir")
 script = ExtResource("1_0y6gs")
 
 [node name="FloorTiles" type="TileMapLayer" parent="." unique_id=629446574]
-tile_set = SubResource("TileSet_xtkou")
+tile_set = ExtResource("2_b3dv4")
 
 [node name="WallTiles" type="TileMapLayer" parent="." unique_id=1701423401]
 tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAAOAAEAAAAAAAAAAFAOAA4AAAAAAAAAADAPAA8AAQAAAAAAAAAPAAAAAQAAAAAAAGAAAAAAAQAAAAAAADABAA8AAwAAAAAAAAACAA8AAwAAAAAAAAADAA8AAwAAAAAAAAAEAA8AAwAAAAAAAAAFAA8AAwAAAAAAAAAGAA8AAwAAAAAAAAAHAA8AAwAAAAAAAAAIAA8AAwAAAAAAAAAJAA8AAwAAAAAAAAAKAA8AAwAAAAAAAAALAA8AAwAAAAAAAAAMAA8AAwAAAAAAAAANAA8AAwAAAAAAAAAOAA8AAwAAAAAAAAAPAA4AAwAAAAAAAGAPAA0AAwAAAAAAAGAPAAwAAwAAAAAAAGAPAAsAAwAAAAAAAGAPAAoAAwAAAAAAAGAPAAkAAwAAAAAAAGAPAAgAAwAAAAAAAGAPAAcAAwAAAAAAAGAPAAYAAwAAAAAAAGAPAAUAAwAAAAAAAGAPAAQAAwAAAAAAAGAPAAMAAwAAAAAAAGAPAAIAAwAAAAAAAGAPAAEAAwAAAAAAAGAOAAAAAwAAAAAAADANAAAAAwAAAAAAADAMAAAAAwAAAAAAADALAAAAAwAAAAAAADAKAAAAAwAAAAAAADAJAAAAAwAAAAAAADAIAAAAAwAAAAAAADAHAAAAAwAAAAAAADAGAAAAAwAAAAAAADAFAAAAAwAAAAAAADAEAAAAAwAAAAAAADADAAAAAwAAAAAAADACAAAAAwAAAAAAADABAAAAAwAAAAAAADAAAAEAAwAAAAAAAFAAAAIAAwAAAAAAAFAAAAMAAwAAAAAAAFAAAAQAAwAAAAAAAFAAAAUAAwAAAAAAAFAAAAYAAwAAAAAAAFAAAAcAAwAAAAAAAFAAAAgAAwAAAAAAAFAAAAkAAwAAAAAAAFAAAAoAAwAAAAAAAFAAAAsAAwAAAAAAAFAAAAwAAwAAAAAAAFAAAA0AAwAAAAAAAFAAAA4AAwAAAAAAAFAAAA8AAQAAAAAAAFABAA4AAAAAAAAAAGACAA4AAgAAAAAAADADAA4AAgAAAAAAADAEAA4AAgAAAAAAADAFAA4AAgAAAAAAADAGAA4AAgAAAAAAADAHAA4AAgAAAAAAADAIAA4AAgAAAAAAADAJAA4AAgAAAAAAADAKAA4AAgAAAAAAADALAA4AAgAAAAAAADAMAA4AAgAAAAAAADANAA4AAgAAAAAAADAOAA0AAgAAAAAAAFAOAAwAAgAAAAAAAFAOAAsAAgAAAAAAAFAOAAoAAgAAAAAAAFAOAAkAAgAAAAAAAFAOAAgAAgAAAAAAAFAOAAcAAgAAAAAAAFAOAAYAAgAAAAAAAFAOAAUAAgAAAAAAAFAOAAQAAgAAAAAAAFAOAAMAAgAAAAAAAFAOAAIAAgAAAAAAAFANAAEAAgAAAAAAAAAMAAEAAgAAAAAAAAALAAEAAgAAAAAAAAAKAAEAAgAAAAAAAAAJAAEAAgAAAAAAAAAIAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAIAAgAAAAAAAGABAAMAAgAAAAAAAGABAAQAAgAAAAAAAGABAAUAAgAAAAAAAGABAAYAAgAAAAAAAGABAAcAAgAAAAAAAGABAAgAAgAAAAAAAGABAAkAAgAAAAAAAGABAAoAAgAAAAAAAGABAAsAAgAAAAAAAGABAAwAAgAAAAAAAGABAA0AAgAAAAAAAGA=")

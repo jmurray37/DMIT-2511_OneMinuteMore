@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GatorSpriteDocument" format=4 uid="uid://b81wbxc3cd8b"]
+[gd_resource type="Resource" script_class="GatorSpriteDocument" format=4 uid="uid://cu5g61dc8r24b"]
 
 [ext_resource type="Script" uid="uid://djgd24ekkf1o1" path="res://addons/gator_sprite_studio/core/gator_sprite_animation.gd" id="1_fwt4o"]
 [ext_resource type="Script" uid="uid://cn7je47j0pcrs" path="res://addons/gator_sprite_studio/core/gator_sprite_layer_group.gd" id="2_37wp2"]
@@ -12,49 +12,73 @@
 
 [sub_resource type="Resource" id="Resource_fwt4o"]
 script = ExtResource("1_fwt4o")
-frames_per_second = 3.0
-frame_count = 4
+frames_per_second = 8.0
+frame_count = 10
 
 [sub_resource type="Resource" id="Resource_37wp2"]
 script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAOZJREFUOI1jYMADwjUM/4drGP7Hp4YRn2Zk/sob57GqZcFlgIWoKAp/5Q0SXNBv6wa33VBWmoGBgYHh/OOnDIWHd2GoxxBA1kyMISgcbJoJGcLIwMDAcGS64//Ty1gxNKVO0GJgYGBgmF1wDcMQ06jfDDaZ+xmZjkx3xGpr6gQtBm4VD4bk6INwg84/fopi0JHpjv/xuuDE69cMDAyoMQLTzGL7gMEmcz8j3C+weEePPlwAFg5MuGwlFqDEAnLqw+cS5FjAcAGpLsFISOh5AN0leBMSDPTbuv1Hd4GFqCjWpIwXEJOdATtEXVrEP9C2AAAAAElFTkSuQmCC")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAUVJREFUOI1tUzFSw0AM3DV09CntS2s3mWGo848UvCE8AAo+wC/4BQ0tZAhFaONkoCA1qZdCusudYxUe+SStVqs7EAAB+9K8+DtqgxxGjxCUToW2aQQCfoivfjcKWUVHCVXoQqPEjBZtQ6Mxak5CqXMXaknELEwAOicRH/0BpLDZ7guEiqm30DWNJAP87A94WMxBAOudFUNEN61VAOS05HwIQhQen19xv5hDWYk1KEY4WRdMOAGYhYlPIIDEevub0jdJUJ4vqwu1QBuMLg0kiLapUgM6hEqQdlrrhC5IXtzv05VBuZPy5Pi2lEhQvh+ncnX9dCZAFbuc4GhimuhIKx7QjKEqhhFnlvCzunAEL5Lwvary0hyOI57ZcXWnv/flILfMr3IsZQFvXLwdyyjzL+njaZAGADe3L9CIzgUjZvHzO8bMH7d/rKWFL/OMj8EAAAAASUVORK5CYII=")
 
 [sub_resource type="Resource" id="Resource_tiq2r"]
 script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAANxJREFUOI2lU6sSgkAUPcvYzCSGZhDbUrQoTf0D+QE71a+Q7hCZ8ROkkkhu02JjNm02r0HZYVcBldP23r3nnvsiUkr0gdUruosg9HwZen6rRFKV0PWxjpltI8ozogjixeqnRlDXASs5ojwjZD9ffgzexhPtfYguGgEAsJJj0BQ8HK0BAOF0BwBI0kCRsJKDug6o67w30czc5GMlB9A1hVf2NliFEJqhknm/nZQtSQPNV1dBNmMqgedomuSagXUogiaYxCY6V7kQAmaZmoK2Y6q283g9k78IvkHva3wAqxNSJo0KoIYAAAAASUVORK5CYII=")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAARNJREFUOI2VU7tOAzEQnDF09JThaEmDhKhT5TeoKZMvScu3gChSw0k0qfNQKOhJPRT2+rw+g8QUpz3vzO7crg8EQCA+GSN7baLi0CJCUD4V1s+PKnWz+VOzZLAgsxtiAFi/2Jmvk0zo1841aic0ue/yN8oioWXrP3DKaXclMDq67S5BIfoj8bH9yvTNbl8Mv8K0mwhknEoaDSSIcVOb7cHtkSiHkHBzPdFQXZCSeHfIVwZ+J/7k9LaQSFBpP8nKxd1qtMNgXYZyhOJGIVpubNNSwdKwb5bw2Z+lCkkk4diHUlqWYyOKOPVLfb8vKq7nh7KWikRq7P6dyPD8c7uKqmgAcP/wCjXm7ByxyI9GPEynVmb8AIFtaQSD9opcAAAAAElFTkSuQmCC")
 
 [sub_resource type="Resource" id="Resource_7wp06"]
 script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAHpJREFUOI1jYMADbtX1/79V1/8fnxomZE64huH/cA1DvBpwqiNWM7J6DBesvHGekVgDkA0hG1BsAAMDAwOKk9FNJNVLKIAqzkMGuNIDE8w2fDaia8aqllgno1uGkRIJaWZgwBO4yAZg8zNJAUtMRiLKEFyuIdkgXIYAANW5SjqOXiJVAAAAAElFTkSuQmCC")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAANxJREFUOI2VU7ERwjAMfJkU1KzCUVOxBjUlbMMscBTpyRawAdRPociWfE4ufJGTlddLsiwIAAH0K2rZsYmKI2YJCGYv0d9O9HH7w7UpmczI7EYwAPR380WdsQhOZq5RVyIWHrPMw4ukVln/IGnKRYkbkHKJwPRNz3FSXf2cSP6XGUTS6hc8IA/rWIBOp+BHLNhu1hAKKABISJhVoZLjJVpSoXrfw0oPHINIvIbkQoOcNCzFd7jw8zxX3MhPXsu1ZonD7igj8jtrjxUNAHbHB1j2rfFc3AbH4mrP9Gh+q8hNyQU4ZiUAAAAASUVORK5CYII=")
 
 [sub_resource type="Resource" id="Resource_rsv3f"]
 script = ExtResource("4_7wp06")
-png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADBJREFUOI1jYBgFo2AU4AQJggr/iVXLRKrmBEGF/yhqSLENmx5GdIEF7x9gFcPFBwARThb0cKUVtwAAAABJRU5ErkJggg==")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAMRJREFUOI2VkzESwjAMBFeeNJS8haGm4hvUeRJvIUORl4nCkSMZJQQVGVk53Z01MgII1K/UzI5pdBixTFC0VZX5Narvu92fKWWxpKGTZoB5slrkWUzopnIfvROx9qiyH56kZLb+iVIlDwknIesQYXvSe5jSu98jaf8aQinV/YEF8mE3FijiK3KUYUHpMkRrEQX010CDZFTstedp1Lgb8oUfPJe7GgpczidEvKPoToHBVjGDXR9vdH1vybq4FxzN9ZXtwX4A+io8zIiY+OwAAAAASUVORK5CYII=")
 
 [sub_resource type="Resource" id="Resource_pucgx"]
-script = ExtResource("3_tiq2r")
-layer_title = "Spritesheet"
-cels = Array[ExtResource("4_7wp06")]([SubResource("Resource_37wp2"), SubResource("Resource_tiq2r"), SubResource("Resource_7wp06"), SubResource("Resource_rsv3f")])
+script = ExtResource("4_7wp06")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAK1JREFUOI2VU8ERwyAMk7xYX90lI3WW5sVk7gNMjTGU6pEjjizJPgICIFCfrCd7TRE4tBOh0F5VlPelvu/xfKWSYofOTpoBoNxWG3VaCF06R8QktPbRZQ8vIlmsfyDV8sg4Ab9LBNab3nEkpt+J9G+doZCa/uACedjEBIS+wlOFxtK2RGuhAtBfCx0sR8foXe5Lx7vBiS9ey422gCLyhZwb0iFSVfcHc+L4yjrTB+AvNi4FieqmAAAAAElFTkSuQmCC")
 
 [sub_resource type="Resource" id="Resource_xtkou"]
+script = ExtResource("4_7wp06")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAHlJREFUOI3NU0EKgDAMS4rv8uRnfJGf8eTH6kHErTZTUNDAYG3S0HUU7g4CAAhwu+1hiqChuwvlPdij6jcMOkUs81i9rR+mdCppB7FY5VIDJVScXQmuTL7/hcpATbqlOXXQMsm4H8zAjDASLI4Cg460YzuJuMFlRpuuLe0gFVDybTwAAAAASUVORK5CYII=")
+
+[sub_resource type="Resource" id="Resource_7bywy"]
+script = ExtResource("4_7wp06")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAGVJREFUOI1j+P//PwMjAwMDAwMjAwMjhAXjYgVoahj///+PQyVxgIki3aMGDBcDWJA5h/ZkEpWq7Fymw5Mj3AXEakZXy0SqZnRAdhjALGViYsKV7QgDRkYmRO5kZEDPwcgiuC0BAJsXFchc4pgHAAAAAElFTkSuQmCC")
+
+[sub_resource type="Resource" id="Resource_x8j34"]
+script = ExtResource("4_7wp06")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFpJREFUOI1j+P//PwMjAwMDAwMjAwMjhAXjYgVoahj///+PQyVxgIki3aMGjBpALQNYYIxDezJJStN2LtMZ4S4gVTOyHsaDuzMoy02w3MnIgJ6DkUVw5W0GBgCo/BLV6YJcvAAAAABJRU5ErkJggg==")
+
+[sub_resource type="Resource" id="Resource_uggxq"]
+script = ExtResource("4_7wp06")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFpJREFUOI1j+P//PwMjAwMDAwMjAwMjhAXjYgVoahj///+PQyVxgIki3aMGjBpALQNYYIxDezJJStN2LtMZ4S4gVTOyHsaDuzMoy02w3MnIgJ6DkUVw5W0GBgCo/BLV6YJcvAAAAABJRU5ErkJggg==")
+
+[sub_resource type="Resource" id="Resource_28n12"]
+script = ExtResource("4_7wp06")
+png_bytes = PackedByteArray("iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAFpJREFUOI1j+P//PwMjAwMDAwMjAwMjhAXjYgVoahj///+PQyVxgIki3aMGjBpALQNYYIxDezJJStN2LtMZ4S4gVTOyHsaDuzMoy02w3MnIgJ6DkUVw5W0GBgCo/BLV6YJcvAAAAABJRU5ErkJggg==")
+
+[sub_resource type="Resource" id="Resource_wbts0"]
+script = ExtResource("3_tiq2r")
+layer_title = "Spritesheet"
+cels = Array[ExtResource("4_7wp06")]([SubResource("Resource_37wp2"), SubResource("Resource_tiq2r"), SubResource("Resource_7wp06"), SubResource("Resource_rsv3f"), SubResource("Resource_pucgx"), SubResource("Resource_xtkou"), SubResource("Resource_7bywy"), SubResource("Resource_x8j34"), SubResource("Resource_uggxq"), SubResource("Resource_28n12")])
+
+[sub_resource type="Resource" id="Resource_smlum"]
 script = ExtResource("6_pucgx")
 rectangle = Rect2i(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_7bywy"]
+[sub_resource type="Resource" id="Resource_4hfy5"]
 script = ExtResource("8_7bywy")
 cells = PackedInt32Array(-1)
 
-[sub_resource type="Resource" id="Resource_x8j34"]
+[sub_resource type="Resource" id="Resource_ln0oq"]
 script = ExtResource("9_x8j34")
 source_png = PackedByteArray()
 
 [resource]
 script = ExtResource("5_rsv3f")
-document_title = "EnemyGuy_sheet"
+document_title = "Walk_Up_Cycle"
 canvas_size = Vector2i(16, 16)
 palette = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.25, 0.72, 0.32, 1, 0.12, 0.22, 0.16, 1)
-layers = Array[ExtResource("3_tiq2r")]([SubResource("Resource_pucgx")])
-tileset = SubResource("Resource_x8j34")
-tilemap = SubResource("Resource_7bywy")
+layers = Array[ExtResource("3_tiq2r")]([SubResource("Resource_wbts0")])
+tileset = SubResource("Resource_ln0oq")
+tilemap = SubResource("Resource_4hfy5")
 animations = Array[ExtResource("1_fwt4o")]([SubResource("Resource_fwt4o")])
-slices = Array[ExtResource("6_pucgx")]([SubResource("Resource_xtkou")])
+slices = Array[ExtResource("6_pucgx")]([SubResource("Resource_smlum")])

@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cjcbqb083w66g" path="res://Scripts/Player_Scripts/player.gd" id="2_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://dmvbyoj787w26" path="res://Assets/Sprites/Player/Walk_Down_Cycle.png" id="3_i6g32"]
 [ext_resource type="Texture2D" uid="uid://sasvx6yph466" path="res://Assets/Sprites/Player/Walk_Left_Cycle.png" id="4_1l0tm"]
+[ext_resource type="TileSet" uid="uid://c0ksa3j127qdk" path="res://Assets/Sprites/Environment/Rooms/Floor_Tileset.tres" id="4_fkdbe"]
+[ext_resource type="Script" uid="uid://chihf2fq0xee3" path="res://Scenes/room_generator.gd" id="5_81klo"]
 [ext_resource type="Texture2D" uid="uid://bt8e2nu1ddsuu" path="res://Assets/Sprites/Player/Walk_Right_Cycle.png" id="5_v158k"]
 [ext_resource type="Texture2D" uid="uid://uqghylpi137h" path="res://Assets/Sprites/Player/Walk_Up_Cycle.png" id="6_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://b815ruvhdeqne" path="res://Assets/Sprites/UI/Hourglass_Drain.png" id="8_v158k"]
@@ -21,10 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://ihi16qncodfm" path="res://Assets/Sprites/Environment/Rooms/Inner_Wall_Corner.png" id="14_nb51f"]
 [ext_resource type="Texture2D" uid="uid://darb3skvfqsw0" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeI.png" id="15_7t8sx"]
 [ext_resource type="Texture2D" uid="uid://cu47t68drist8" path="res://Assets/Sprites/Environment/Rooms/Floor_Tile_TypeC.png" id="15_nb51f"]
+[ext_resource type="Texture2D" uid="uid://bcha12le10phb" path="res://Assets/Sprites/Player/Player_Death_sheet.png" id="20_tgy6u"]
 [ext_resource type="Script" uid="uid://b2cgnx6xbw85v" path="res://Scripts/room_enemy_spawner.gd" id="21_exi56"]
 [ext_resource type="PackedScene" uid="uid://cig1c7cntprlm" path="res://Scenes/Enemies/drainer_enemy.tscn" id="22_7t8sx"]
 [ext_resource type="PackedScene" uid="uid://c6jh20i3xfxn5" path="res://Scenes/Enemies/ranged_enemy.tscn" id="23_mg4q0"]
 [ext_resource type="PackedScene" uid="uid://ecp115tb7261" path="res://Scenes/Enemies/melee_enemy.tscn" id="24_vm72l"]
+[ext_resource type="FontFile" uid="uid://d1hb250vcmui7" path="res://Assets/Fonts/Almendra-BoldItalic.ttf" id="29_cwurv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4fw4"]
 atlas = ExtResource("8_v158k")
@@ -200,6 +204,46 @@ sources/12 = SubResource("TileSetAtlasSource_fkdbe")
 [sub_resource type="CircleShape2D" id="CircleShape2D_sy8nv"]
 radius = 5.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uxt2"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym3tv"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwj6o"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3c8l"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu0y5"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a4tp"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_631el"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs120"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2cs8"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32sfa"]
+atlas = ExtResource("20_tgy6u")
+region = Rect2(144, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldgsr"]
 atlas = ExtResource("3_i6g32")
 region = Rect2(0, 0, 16, 16)
@@ -266,6 +310,41 @@ region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_scplb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uxt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym3tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwj6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3c8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu0y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a4tp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_631el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs120")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2cs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32sfa")
+}],
+"loop": 0,
+"name": &"Player_Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ldgsr")
@@ -370,7 +449,12 @@ position = Vector2(23, 7)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1018095043]
 anchor_mode = 0
 
-[node name="RoomTiles" type="TileMapLayer" parent="." unique_id=1589899232]
+[node name="FloorTiles" type="TileMapLayer" parent="." unique_id=1085648187]
+z_index = -2
+tile_set = ExtResource("4_fkdbe")
+script = ExtResource("5_81klo")
+
+[node name="WallTiles" type="TileMapLayer" parent="." unique_id=1589899232]
 tile_map_data = PackedByteArray("AAAAAA8ACgAAAAAAAFAPAA8ACgAAAAAAAAAPAAAACgAAAAAAAGAOAA4ACQAAAAAAADABAA4ACQAAAAAAAGAOAAEACQAAAAAAAFAAAAAACgAAAAAAADABAAAADAAAAAAAADAAAAEADAAAAAAAAFABAAEACQAAAAAAAAABAAIACwAAAAAAAGABAAMACwAAAAAAAGABAAQACwAAAAAAAGABAAUACwAAAAAAAGABAAYACwAAAAAAAGABAAcACwAAAAAAAGABAAgACwAAAAAAAGABAAkACwAAAAAAAGABAAoACwAAAAAAAGABAAsACwAAAAAAAGABAAwACwAAAAAAAGABAA0ACwAAAAAAAGACAA4ACwAAAAAAADADAA4ACwAAAAAAADAEAA4ACwAAAAAAADAFAA4ACwAAAAAAADAGAA4ACwAAAAAAADAHAA4ACwAAAAAAADAIAA4ACwAAAAAAADAJAA4ACwAAAAAAADAKAA4ACwAAAAAAADALAA4ACwAAAAAAADAMAA4ACwAAAAAAADANAA4ACwAAAAAAADAOAA0ACwAAAAAAAFAOAAwACwAAAAAAAFAOAAsACwAAAAAAAFAOAAoACwAAAAAAAFAOAAkACwAAAAAAAFAOAAgACwAAAAAAAFAOAAcACwAAAAAAAFAOAAYACwAAAAAAAFAOAAUACwAAAAAAAFAOAAQACwAAAAAAAFAOAAMACwAAAAAAAFAOAAIACwAAAAAAAFACAAEACwAAAAAAAAADAAEACwAAAAAAAAAEAAEACwAAAAAAAAAFAAEACwAAAAAAAAAGAAEACwAAAAAAAAAHAAEACwAAAAAAAAAIAAEACwAAAAAAAAAJAAEACwAAAAAAAAAKAAEACwAAAAAAAAALAAEACwAAAAAAAAAMAAEACwAAAAAAAAANAAEACwAAAAAAAAACAAAADAAAAAAAADADAAAADAAAAAAAADAEAAAADAAAAAAAADAFAAAADAAAAAAAADAGAAAADAAAAAAAADAHAAAADAAAAAAAADAIAAAADAAAAAAAADAJAAAADAAAAAAAADAKAAAADAAAAAAAADALAAAADAAAAAAAADAMAAAADAAAAAAAADANAAAADAAAAAAAADAOAAAADAAAAAAAADAPAAEADAAAAAAAAGAPAAIADAAAAAAAAGAPAAMADAAAAAAAAGAPAAQADAAAAAAAAGAPAAUADAAAAAAAAGAPAAYADAAAAAAAAGAPAAcADAAAAAAAAGAPAAgADAAAAAAAAGAPAAkADAAAAAAAAGAPAAoADAAAAAAAAGAPAAsADAAAAAAAAGAPAAwADAAAAAAAAGAPAA0ADAAAAAAAAGAPAA4ADAAAAAAAAGAOAA8ADAAAAAAAAAANAA8ADAAAAAAAAAAMAA8ADAAAAAAAAAALAA8ADAAAAAAAAAAKAA8ADAAAAAAAAAAJAA8ADAAAAAAAAAAIAA8ADAAAAAAAAAAHAA8ADAAAAAAAAAAGAA8ADAAAAAAAAAAFAA8ADAAAAAAAAAAEAA8ADAAAAAAAAAADAA8ADAAAAAAAAAACAA8ADAAAAAAAAAABAA8ADAAAAAAAAAAAAA4ADAAAAAAAAFAAAA0ADAAAAAAAAFAAAAwADAAAAAAAAFAAAAsADAAAAAAAAFAAAAoADAAAAAAAAFAAAAkADAAAAAAAAFAAAAgADAAAAAAAAFAAAAcADAAAAAAAAFAAAAYADAAAAAAAAFAAAAUADAAAAAAAAFAAAAQADAAAAAAAAFAAAAMADAAAAAAAAFAAAAIADAAAAAAAAFA=")
 tile_set = SubResource("TileSet_xtkou")
 
@@ -385,7 +469,7 @@ shape = SubResource("CircleShape2D_sy8nv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=72595390]
 sprite_frames = SubResource("SpriteFrames_scplb")
-animation = &"walk_up"
+animation = &"Player_Death"
 
 [node name="MeleeHitbox" type="Area2D" parent="Player" unique_id=667227625]
 
@@ -397,3 +481,32 @@ shape = SubResource("RectangleShape2D_1xhw0")
 position = Vector2(123, 114)
 script = ExtResource("21_exi56")
 enemy_scenes = Array[PackedScene]([ExtResource("22_7t8sx"), ExtResource("23_mg4q0"), ExtResource("24_vm72l")])
+
+[node name="DeathOverlay" type="CanvasLayer" parent="." unique_id=1144651413]
+process_mode = 3
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="DeathOverlay" unique_id=1694600859]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="DeathMessage" type="Label" parent="DeathOverlay" unique_id=1211985246]
+visible = false
+custom_minimum_size = Vector2(220, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.75686276, 0.73333335, 0.40784314, 1)
+theme_override_fonts/font = ExtResource("29_cwurv")
+theme_override_font_sizes/font_size = 16
+text = "The Sands of Time Have Claimed Another"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

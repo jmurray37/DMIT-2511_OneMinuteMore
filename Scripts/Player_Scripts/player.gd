@@ -1,3 +1,4 @@
+
 class_name Player
 extends CharacterBody2D
 
@@ -12,6 +13,7 @@ extends CharacterBody2D
 
 var aim_direction: Vector2 = Vector2.DOWN
 var can_melee: bool = true
+var is_dying: bool = false
 
 var projectile_scene: PackedScene = preload(
 	"res://Scenes/Player/player_projectile.tscn"
@@ -23,6 +25,10 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if is_dying:
+		velocity = Vector2.ZERO
+		return
+
 	update_aim()
 	update_melee_hitbox()
 
@@ -40,6 +46,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_dying:
+		return
+
 	if event is InputEventMouseButton:
 		if not event.pressed:
 			return
@@ -68,7 +77,7 @@ func update_melee_hitbox() -> void:
 
 
 func melee_attack() -> void:
-	if not can_melee:
+	if is_dying or not can_melee:
 		return
 
 	can_melee = false
@@ -81,14 +90,23 @@ func melee_attack() -> void:
 
 	await get_tree().create_timer(melee_cooldown).timeout
 
+	if is_dying:
+		return
+
 	can_melee = true
 
 
 func shoot() -> void:
+	if is_dying:
+		return
+
 	var game: Node = get_tree().current_scene
 
 	if game.has_method("drain_time"):
 		game.drain_time(projectile_time_cost)
+
+	if is_dying:
+		return
 
 	var projectile = projectile_scene.instantiate()
 
@@ -104,6 +122,9 @@ func shoot() -> void:
 
 
 func update_animation(move_direction: Vector2) -> void:
+	if is_dying:
+		return
+
 	var animation_name: StringName = get_aim_animation()
 
 	if move_direction == Vector2.ZERO:
@@ -125,3 +146,30 @@ func get_aim_animation() -> StringName:
 			return &"walk_down"
 		else:
 			return &"walk_up"
+
+
+func begin_death() -> void:
+	if is_dying:
+		return
+
+	is_dying = true
+
+	velocity = Vector2.ZERO
+	can_melee = false
+
+	# Keep the player running while the rest of the game pauses.
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+	# Freeze enemies, projectiles, and normal gameplay.
+	get_tree().paused = true
+
+	# Play the sand transformation and collapse.
+	animated_sprite.play("Player_Death")
+
+	await animated_sprite.animation_finished
+
+	if not is_instance_valid(self):
+		return
+
+	# Hold the last frame until the next death sequence stage.
+	animated_sprite.pause()

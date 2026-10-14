@@ -1,3 +1,4 @@
+
 class_name MeleeEnemy
 extends Enemy
 
@@ -50,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = global_position.direction_to(
 		player.global_position
 	)
-	
+
 	if direction.x != 0:
 		animated_sprite.flip_h = (direction.x < 0)
 
@@ -176,13 +177,15 @@ func die() -> void:
 
 	melee_timer.stop()
 
-	# Stop the corpse from attacking or blocking things.
-	attack_area.monitoring = false
-	attack_area.monitorable = false
+	# Safely disable the attack area after physics processing.
+	attack_area.set_deferred("monitoring", false)
+	attack_area.set_deferred("monitorable", false)
 
+	# Safely disable the corpse's physical collision.
 	var body_collision: CollisionShape2D = $CollisionShape2D
-	body_collision.disabled = true
+	body_collision.set_deferred("disabled", true)
 
+	# Play the death animation.
 	animated_sprite.play("Death_Melee")
 
 	await animated_sprite.animation_finished
@@ -193,11 +196,12 @@ func die() -> void:
 	# Freeze on the final death frame.
 	animated_sprite.pause()
 
+	# Return lifespan and spawn the healing orb.
 	give_time_reward()
 
 	print(name, " DIED")
 
-	# Leave the bones behind for 5 seconds.
+	# Leave the bones behind for 2 seconds.
 	await get_tree().create_timer(corpse_lifetime).timeout
 
 	if is_instance_valid(self):

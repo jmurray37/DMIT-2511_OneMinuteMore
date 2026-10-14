@@ -1,6 +1,7 @@
+
 extends Node2D
 
-@onready var floor_tiles: TileMapLayer = $FloorTiles
+@onready var floor_tiles: TileMapLayer = find_floor_tiles()
 
 const FLOOR_START_X: int = 2
 const FLOOR_START_Y: int = 2
@@ -32,12 +33,33 @@ const DIRECTIONS: Array[Vector2i] = [
 ]
 
 
+func find_floor_tiles() -> TileMapLayer:
+	# First, check for a child called FloorTiles.
+	var child: TileMapLayer = get_node_or_null(
+		"FloorTiles"
+	) as TileMapLayer
+
+	if child != null:
+		return child
+
+	# Otherwise, check the node this script is attached to.
+	return get_node_or_null(".") as TileMapLayer
+
+
 func _ready() -> void:
 	randomize()
+
+	if floor_tiles == null:
+		push_error("Room Generator could not find FloorTiles")
+		return
+
 	generate_floor()
 
 
 func generate_floor() -> void:
+	if floor_tiles == null:
+		return
+
 	floor_tiles.clear()
 
 	var theme: Array = floor_themes.pick_random()
