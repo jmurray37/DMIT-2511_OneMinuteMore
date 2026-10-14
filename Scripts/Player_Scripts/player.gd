@@ -14,6 +14,7 @@ extends CharacterBody2D
 var aim_direction: Vector2 = Vector2.DOWN
 var can_melee: bool = true
 var is_dying: bool = false
+var is_flipping: bool = false
 
 var projectile_scene: PackedScene = preload(
 	"res://Scenes/Player/player_projectile.tscn"
@@ -25,7 +26,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_dying:
+	if is_dying or is_flipping:
 		velocity = Vector2.ZERO
 		return
 
@@ -46,7 +47,29 @@ func _physics_process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if is_dying:
+	if is_dying or is_flipping:
+		return
+
+	# R activates the Hourglass Reset.
+	# Once activated, the flip cannot be cancelled.
+	if event is InputEventKey:
+		if (
+			event.pressed
+			and not event.echo
+			and event.keycode == KEY_R
+		):
+			var game: Node = get_tree().current_scene
+
+			if (
+				game != null
+				and game.has_method(
+					"try_start_hourglass_reset"
+				)
+			):
+				game.call(
+					"try_start_hourglass_reset"
+				)
+
 		return
 
 	if event is InputEventMouseButton:
@@ -58,6 +81,31 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			shoot()
+
+
+func begin_hourglass_flip() -> void:
+	if is_dying or is_flipping:
+		return
+
+	is_flipping = true
+	velocity = Vector2.ZERO
+
+	# Hold the player on the first idle frame.
+	# A dedicated flip animation can replace this later.
+	animated_sprite.animation = get_aim_animation()
+	animated_sprite.frame = 0
+	animated_sprite.pause()
+
+	print("PLAYER STARTED HOURGLASS RESET")
+
+
+func end_hourglass_flip() -> void:
+	if not is_flipping:
+		return
+
+	is_flipping = false
+
+	print("PLAYER FINISHED HOURGLASS RESET")
 
 
 func update_aim() -> void:
@@ -77,7 +125,7 @@ func update_melee_hitbox() -> void:
 
 
 func melee_attack() -> void:
-	if is_dying or not can_melee:
+	if is_dying or is_flipping or not can_melee:
 		return
 
 	can_melee = false
@@ -85,10 +133,15 @@ func melee_attack() -> void:
 	var bodies: Array[Node2D] = melee_hitbox.get_overlapping_bodies()
 
 	for body: Node2D in bodies:
-		if body.is_in_group("enemy") and body.has_method("take_damage"):
+		if (
+			body.is_in_group("enemy")
+			and body.has_method("take_damage")
+		):
 			body.take_damage(melee_damage)
 
-	await get_tree().create_timer(melee_cooldown).timeout
+	await get_tree().create_timer(
+		melee_cooldown
+	).timeout
 
 	if is_dying:
 		return
@@ -97,22 +150,28 @@ func melee_attack() -> void:
 
 
 func shoot() -> void:
-	if is_dying:
+	if is_dying or is_flipping:
 		return
 
 	var game: Node = get_tree().current_scene
 
+	if game == null:
+		return
+
 	if game.has_method("drain_time"):
 		game.drain_time(projectile_time_cost)
 
-	if is_dying:
+	if is_dying or is_flipping:
 		return
 
 	var projectile = projectile_scene.instantiate()
 
 	get_tree().current_scene.add_child(projectile)
 
-	projectile.global_position = global_position + aim_direction * 8.0
+	projectile.global_position = (
+		global_position + aim_direction * 8.0
+	)
+
 	projectile.direction = aim_direction
 
 	projectile.rotation = (
@@ -122,7 +181,7 @@ func shoot() -> void:
 
 
 func update_animation(move_direction: Vector2) -> void:
-	if is_dying:
+	if is_dying or is_flipping:
 		return
 
 	var animation_name: StringName = get_aim_animation()
@@ -153,11 +212,13 @@ func begin_death() -> void:
 		return
 
 	is_dying = true
+	is_flipping = false
 
 	velocity = Vector2.ZERO
 	can_melee = false
 
-	# Keep the player running while the rest of the game pauses.
+	# Keep the player running while the rest
+	# of the game pauses.
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 	# Freeze enemies, projectiles, and normal gameplay.
@@ -171,5 +232,5 @@ func begin_death() -> void:
 	if not is_instance_valid(self):
 		return
 
-	# Hold the last frame until the next death sequence stage.
+	# Hold the final death frame.
 	animated_sprite.pause()

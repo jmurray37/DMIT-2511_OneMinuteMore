@@ -115,7 +115,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Green_Portal",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -167,7 +167,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Red_Portal",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sy8nv"]
@@ -179,9 +179,8 @@ script = ExtResource("1_lbu7l")
 z_index = -1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_sy8nv")
-animation = &"Purple_Portal"
+animation = &"Green_Portal"
 autoplay = "Purple_Portal"
-frame_progress = 0.6967793
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=869541437]
 shape = SubResource("CircleShape2D_sy8nv")
