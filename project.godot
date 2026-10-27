@@ -17,14 +17,13 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=256
-window/size/viewport_height=256
-window/size/mode=2
+window/size/viewport_width=1078
+window/size/viewport_height=608
 window/size/initial_position_type=0
-window/size/window_width_override=1024
-window/size/window_height_override=1024
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/resizable=false
+window/size/window_width_override=1078
+window/size/window_height_override=608
+window/stretch/mode="viewport"
 
 [dotnet]
 

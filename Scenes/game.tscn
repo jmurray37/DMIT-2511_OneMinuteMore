@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://c6jh20i3xfxn5" path="res://Scenes/Enemies/ranged_enemy.tscn" id="23_mg4q0"]
 [ext_resource type="PackedScene" uid="uid://ecp115tb7261" path="res://Scenes/Enemies/melee_enemy.tscn" id="24_vm72l"]
 [ext_resource type="FontFile" uid="uid://d1hb250vcmui7" path="res://Assets/Fonts/Almendra-BoldItalic.ttf" id="29_cwurv"]
+[ext_resource type="Script" uid="uid://ukbx2m5358j1" path="res://Scripts/ResolutionSwitcher.gd" id="30_mucmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4fw4"]
 atlas = ExtResource("8_v158k")
@@ -436,6 +437,7 @@ offset_right = 60.0
 offset_bottom = 22.0
 theme_override_font_sizes/font_size = 8
 text = "60.0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Hourglass" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1701794480]
 scale = Vector2(1.5, 1.5)
@@ -495,6 +497,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="DeathMessage" type="Label" parent="DeathOverlay" unique_id=1211985246]
 visible = false
@@ -511,3 +514,6 @@ text = "The Sands of Time Have Claimed Another"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="ResolutionSwitcher" type="Node" parent="." unique_id=493146672]
+script = ExtResource("30_mucmn")
