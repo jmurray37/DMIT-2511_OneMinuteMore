@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qymmexc6rp2m"]
 
-[ext_resource type="Texture2D" uid="uid://dypbk4i6ap1s6" path="res://Scenes/Ui/penup_20261014_123730.jpg" id="1_5yj30"]
+[ext_resource type="Texture2D" uid="uid://cvk8aba2lu08c" path="res://Assets/Sprites/UI/Title_Screen.png" id="1_xbk0k"]
 [ext_resource type="Texture2D" uid="uid://biy2qnrhjxr5f" path="res://Assets/Sprites/UI/Button_Play.webp" id="2_rtkb1"]
 [ext_resource type="Texture2D" uid="uid://00nidqym65ux" path="res://Assets/Sprites/UI/Button_Settings.webp" id="3_wl4u0"]
 [ext_resource type="Texture2D" uid="uid://in3ctvv0c1wr" path="res://Assets/Sprites/UI/Button_Quit.webp" id="4_xbk0k"]
@@ -50,7 +50,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1078.0
 offset_bottom = 608.0
-texture = ExtResource("1_5yj30")
+texture = ExtResource("1_xbk0k")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=426989758]
 layout_mode = 0
