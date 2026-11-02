@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://qymmexc6rp2m"]
+
+[ext_resource type="Texture2D" uid="uid://cvk8aba2lu08c" path="res://Assets/Sprites/UI/Title_Screen.png" id="1_xbk0k"]
+[ext_resource type="Texture2D" uid="uid://biy2qnrhjxr5f" path="res://Assets/Sprites/UI/Button_Play.webp" id="2_rtkb1"]
+[ext_resource type="Texture2D" uid="uid://00nidqym65ux" path="res://Assets/Sprites/UI/Button_Settings.webp" id="3_wl4u0"]
+[ext_resource type="Texture2D" uid="uid://in3ctvv0c1wr" path="res://Assets/Sprites/UI/Button_Quit.webp" id="4_xbk0k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r172s"]
+texture = ExtResource("2_rtkb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vyafb"]
+texture = ExtResource("2_rtkb1")
+modulate_color = Color(0.8266421, 0.00059643626, 0.8377157, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjr6l"]
+texture = ExtResource("2_rtkb1")
+modulate_color = Color(0.9955191, 0.61293924, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl4u0"]
+texture = ExtResource("3_wl4u0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ara3s"]
+texture = ExtResource("3_wl4u0")
+modulate_color = Color(0.8266421, 0.00059643626, 0.8377157, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hwvw"]
+texture = ExtResource("3_wl4u0")
+modulate_color = Color(0.9955191, 0.61293924, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0isq0"]
+texture = ExtResource("4_xbk0k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k24bo"]
+texture = ExtResource("4_xbk0k")
+modulate_color = Color(0.8266421, 0.00059643626, 0.8377157, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lst6o"]
+texture = ExtResource("4_xbk0k")
+modulate_color = Color(0.9955191, 0.61293924, 1, 1)
+
+[node name="MainMenu" type="Control" unique_id=1862029833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=344500706]
+layout_mode = 0
+offset_right = 1078.0
+offset_bottom = 608.0
+texture = ExtResource("1_xbk0k")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=426989758]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 285.0
+offset_right = 420.0
+offset_bottom = 533.9
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1788420928]
+custom_maximum_size = Vector2(-1, 240)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1530007072]
+z_index = 1
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_r172s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vyafb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cjr6l")
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=760863789]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_wl4u0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ara3s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7hwvw")
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1223240988]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_0isq0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k24bo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lst6o")
