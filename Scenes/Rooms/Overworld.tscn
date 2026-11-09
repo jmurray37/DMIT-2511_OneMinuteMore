@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dmlpgoxv5i8x2" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/sand_floor_tile_4.png" id="4_wk2f3"]
 [ext_resource type="Texture2D" uid="uid://cj1pyt0ixenj0" path="res://Assets/Sprites/Environment/Overworld/Ancient Pyramid Pack – 12 Pixel Art Structures/spr_pyramid_5.png" id="5_nptmw"]
 [ext_resource type="Texture2D" uid="uid://bt8e2nu1ddsuu" path="res://Assets/Sprites/Player/Walk_Right_Cycle.png" id="6_ajov0"]
-[ext_resource type="FontFile" uid="uid://25crnm8xpssq" path="res://Assets/Fonts/Almendra-Bold.ttf" id="7_cdpj1"]
-[ext_resource type="Texture2D" uid="uid://dns8r6dgm7dww" path="res://Assets/Sprites/UI/Dialogue Box MC.png" id="7_wk2f3"]
 [ext_resource type="Texture2D" uid="uid://d34u8fhdbwcfl" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/Cactus1.png" id="9_n77o8"]
+[ext_resource type="PackedScene" uid="uid://v557ux8p1jen" path="res://Scenes/Ui/OMMDialogueBox.tscn" id="10_n8jx7"]
 [ext_resource type="Texture2D" uid="uid://bay1vnyct0wjn" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/Cactus2.png" id="10_qyvjs"]
 [ext_resource type="Texture2D" uid="uid://dbbwth13uijcl" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/Cactus3.png" id="11_tvnfo"]
 
@@ -101,30 +100,6 @@ rotation = 0.9215338
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("5_nptmw")
 
-[node name="DialogueBoxMc" type="Sprite2D" parent="." unique_id=1574357489]
-texture_filter = 1
-position = Vector2(306, 548.5)
-scale = Vector2(1.9303797, 1.5657892)
-texture = ExtResource("7_wk2f3")
-
-[node name="Label" type="Label" parent="DialogueBoxMc" unique_id=272193813]
-oversampling_with_scale = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -155.40982
-offset_top = -38.469147
-offset_right = 179.23923
-offset_bottom = 32.08261
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-theme_override_colors/font_color = Color(0.06666667, 0.35686275, 0.9411765, 1)
-theme_override_fonts/font = ExtResource("7_cdpj1")
-theme_override_font_sizes/font_size = 45
-text = "But... I can't turn back now, I can feel the curse closing in."
-autowrap_mode = 2
-
 [node name="Cactus1" type="Sprite2D" parent="." unique_id=1615810158]
 position = Vector2(285, 94)
 scale = Vector2(2, 2)
@@ -144,3 +119,12 @@ texture = ExtResource("10_qyvjs")
 position = Vector2(72, 154)
 scale = Vector2(2, 2)
 texture = ExtResource("11_tvnfo")
+
+[node name="DialogueLayer" type="CanvasLayer" parent="." unique_id=690042306]
+
+[node name="OmmDialogueBox" parent="DialogueLayer" unique_id=177625286 instance=ExtResource("10_n8jx7")]
+offset_left = -28.0
+offset_top = 115.0
+offset_right = -28.0
+offset_bottom = 115.0
+scale = Vector2(2, 2)

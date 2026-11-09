@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://v557ux8p1jen"]
+
+[ext_resource type="Texture2D" uid="uid://dmjexl3r2hqxi" path="res://Assets/Sprites/UI/DialogueBoxHourglass.png" id="1_6h7hq"]
+[ext_resource type="Script" uid="uid://m2tnlbdttbt7" path="res://Scripts/DialogueBox.gd" id="1_kk5m0"]
+[ext_resource type="FontFile" uid="uid://d1gd5i05lqixl" path="res://Assets/Fonts/Almendra-Regular.ttf" id="3_ykakt"]
+[ext_resource type="FontFile" uid="uid://25crnm8xpssq" path="res://Assets/Fonts/Almendra-Bold.ttf" id="4_sjw2b"]
+
+[node name="OmmDialogueBox" type="Control" unique_id=177625286]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kk5m0")
+
+[node name="GoldFrame" type="ColorRect" parent="." unique_id=2034584038]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 170.0
+offset_right = 242.0
+offset_bottom = 246.0
+color = Color(0.75686276, 0.73333335, 0.40784314, 1)
+
+[node name="DialogueBackground" type="ColorRect" parent="." unique_id=1774962991]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 172.0
+offset_right = 240.0
+offset_bottom = 244.0
+color = Color(0.13333334, 0.08235294, 0.16078432, 1)
+
+[node name="FrameHourglass" type="TextureRect" parent="." unique_id=1370220353]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 152.0
+offset_right = 144.0
+offset_bottom = 184.0
+texture = ExtResource("1_6h7hq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameplateBorder" type="ColorRect" parent="." unique_id=1823686753]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 160.0
+offset_right = 96.0
+offset_bottom = 180.0
+color = Color(0.75686276, 0.73333335, 0.40784314, 1)
+
+[node name="NameplateInterior" type="ColorRect" parent="NameplateBorder" unique_id=1824739579]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 70.0
+offset_bottom = 18.0
+color = Color(0.13333334, 0.08235294, 0.16078432, 1)
+
+[node name="SpeakerName" type="Label" parent="NameplateBorder/NameplateInterior" unique_id=1913979210]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_right = 127.0
+offset_bottom = 28.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.44705883, 0.7411765, 0.92156863, 1)
+theme_override_fonts/font = ExtResource("3_ykakt")
+theme_override_font_sizes/font_size = 20
+text = "You"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueText" type="Label" parent="." unique_id=692822136]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 185.0
+offset_right = 440.0
+offset_bottom = 281.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.44705883, 0.7411765, 0.92156863, 1)
+theme_override_fonts/font = ExtResource("4_sjw2b")
+theme_override_font_sizes/font_size = 20
+text = "Damn... this place creeps me out!"
+autowrap_mode = 2
