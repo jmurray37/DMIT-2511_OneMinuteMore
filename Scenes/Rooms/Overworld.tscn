@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://d34u8fhdbwcfl" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/Cactus1.png" id="9_n77o8"]
 [ext_resource type="PackedScene" uid="uid://v557ux8p1jen" path="res://Scenes/Ui/OMMDialogueBox.tscn" id="10_n8jx7"]
 [ext_resource type="Texture2D" uid="uid://bay1vnyct0wjn" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/Cactus2.png" id="10_qyvjs"]
+[ext_resource type="Script" uid="uid://beac0o4605rlt" path="res://Scripts/overworld_cutscene.gd" id="11_n77o8"]
 [ext_resource type="Texture2D" uid="uid://dbbwth13uijcl" path="res://Assets/Sprites/Environment/Overworld/Desert Campsite — Pixel Art Pack/Cactus3.png" id="11_tvnfo"]
+[ext_resource type="PackedScene" uid="uid://bn42o8ys60lpr" path="res://Scenes/game.tscn" id="12_qyvjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdpj1"]
 texture = ExtResource("1_nrdbe")
@@ -77,7 +79,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_n8jx7")
 }],
 "loop": 1,
-"name": &"Cutscene",
+"name": &"Walk",
 "speed": 5.0
 }]
 
@@ -92,7 +94,7 @@ tile_set = SubResource("TileSet_kfswx")
 position = Vector2(300.99997, 270.99994)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_sy8nv")
-animation = &"Cutscene"
+animation = &"Walk"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1358604006]
 position = Vector2(1260.9999, 343.00003)
@@ -128,3 +130,14 @@ offset_top = 115.0
 offset_right = -28.0
 offset_bottom = 115.0
 scale = Vector2(2, 2)
+
+[node name="OverworldCutscene" type="Node" parent="." unique_id=1079065647 node_paths=PackedStringArray("player", "door_point", "dialogue_box")]
+script = ExtResource("11_n77o8")
+walking_speed = 250.0
+dungeon_scene = ExtResource("12_qyvjs")
+player = NodePath("../AnimatedSprite2D")
+door_point = NodePath("../DoorApproachPoint")
+dialogue_box = NodePath("../DialogueLayer/OmmDialogueBox")
+
+[node name="DoorApproachPoint" type="Marker2D" parent="." unique_id=1382462332]
+position = Vector2(797, 280)

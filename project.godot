@@ -15,10 +15,6 @@ run/main_scene="uid://bn42o8ys60lpr"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Dialogic="*uid://ds2q0uclmolvu"
-
 [dialogic]
 
 directories/dch_directory={}
@@ -45,7 +41,7 @@ project/assembly_name="One_Minute_More"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/gator_sprite_studio/plugin.cfg")
 
 [input]
 

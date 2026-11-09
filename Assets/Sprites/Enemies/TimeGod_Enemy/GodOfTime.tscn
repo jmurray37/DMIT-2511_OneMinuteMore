@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://te2shxfaw06h"]
+
+[ext_resource type="Texture2D" uid="uid://d1s7tjk1ntagp" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/Cog Wheels - Gears/SpriteSheets/Bronze Gear Wheels/Gear 11 - Bronze_spritesheet.png" id="1_xjmmm"]
+[ext_resource type="Texture2D" uid="uid://7tfgql3lih0m" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/clock/clock0.png" id="1_y5thk"]
+[ext_resource type="Texture2D" uid="uid://bkd6snf1e68t4" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/Cog Wheels - Gears/SpriteSheets/Silver Gear Wheels/Gear 9 - Silver_spritesheet.png" id="2_mckij"]
+[ext_resource type="Texture2D" uid="uid://dcjq6bof1ry0p" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/clock/clock1.png" id="2_xjmmm"]
+[ext_resource type="Texture2D" uid="uid://dt413eg3yva6c" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/Tentacles.png" id="3_hxhoa"]
+[ext_resource type="Texture2D" uid="uid://ctqf4dg7bgwhu" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/clock/clock2.png" id="3_mckij"]
+[ext_resource type="Texture2D" uid="uid://2kmxecg8esi2" path="res://Assets/Sprites/Enemies/TimeGod_Enemy/clock/clock3.png" id="4_hxhoa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qyh0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hxhoa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nm0u3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hxhoa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mckij"]
+atlas = ExtResource("1_xjmmm")
+region = Rect2(0, 0, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxhoa"]
+atlas = ExtResource("1_xjmmm")
+region = Rect2(59, 0, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqeiu"]
+atlas = ExtResource("1_xjmmm")
+region = Rect2(118, 0, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixlsc"]
+atlas = ExtResource("1_xjmmm")
+region = Rect2(177, 0, 59, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5thk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mckij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxhoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqeiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixlsc")
+}],
+"loop": 1,
+"name": &"gear_1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdpso"]
+atlas = ExtResource("2_mckij")
+region = Rect2(0, 0, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfdnp"]
+atlas = ExtResource("2_mckij")
+region = Rect2(59, 0, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygqk3"]
+atlas = ExtResource("2_mckij")
+region = Rect2(118, 0, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut7hx"]
+atlas = ExtResource("2_mckij")
+region = Rect2(177, 0, 59, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjmmm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdpso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfdnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygqk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut7hx")
+}],
+"loop": 1,
+"name": &"gear_2",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2kjhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y5thk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xjmmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mckij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hxhoa")
+}],
+"loop": 1,
+"name": &"clock",
+"speed": 16.0
+}]
+
+[node name="GodOfTime" type="Node2D" unique_id=687099293]
+
+[node name="tentacle_1" type="AnimatedSprite2D" parent="." unique_id=1469938805]
+position = Vector2(43, -22.000002)
+rotation = 0.6794828
+scale = Vector2(0.6805556, 0.6805556)
+sprite_frames = SubResource("SpriteFrames_qyh0e")
+
+[node name="tentacle_2" type="AnimatedSprite2D" parent="." unique_id=989740228]
+position = Vector2(43, -22.000002)
+rotation = 0.6794828
+scale = Vector2(0.6805556, 0.6805556)
+sprite_frames = SubResource("SpriteFrames_nm0u3")
+
+[node name="gear_1" type="AnimatedSprite2D" parent="." unique_id=586840031]
+scale = Vector2(1.35, 1.35)
+sprite_frames = SubResource("SpriteFrames_y5thk")
+animation = &"gear_1"
+frame_progress = 0.26212072
+
+[node name="gear_2" type="AnimatedSprite2D" parent="." unique_id=1887684324]
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_xjmmm")
+animation = &"gear_2"
+frame_progress = 0.6016383
+
+[node name="GodGlow" type="PointLight2D" parent="." unique_id=1723792196]
+
+[node name="Clock" type="AnimatedSprite2D" parent="." unique_id=1618017051]
+sprite_frames = SubResource("SpriteFrames_2kjhk")
+animation = &"clock"
+frame_progress = 0.94126487
