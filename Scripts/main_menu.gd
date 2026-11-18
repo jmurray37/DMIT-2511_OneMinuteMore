@@ -1,14 +1,17 @@
+class_name MainMenu
 extends Control
+@onready var settings_menu: Control = $SettingsMenu
 
-@onready var play_button: Button = $MarginContainer/VBoxContainer/PlayButton
-@onready var settings_button: Button = $MarginContainer/VBoxContainer/SettingsButton
-@onready var quit_button: Button = $MarginContainer/VBoxContainer/QuitButton
-
+@export var play_button: Button
+@export var settings_button: Button
+@export var quit_button: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	play_button.pressed.connect(_on_play_pressed())
-	#settings_menu.back_button.pressed.connect(_on_settings_back_pressed)
+	play_button.pressed.connect(_on_play_pressed)
+	settings_button.pressed.connect(_on_settings_pressed)
+	settings_menu.back_button.pressed.connect(_on_settings_back_pressed)
+	quit_button.pressed.connect(_on_exit_pressed)
 	#if settings_menu.back_button.pressed.is_connected(_on_settings_back_pressed):
 	#	print("TEST")
 
@@ -21,13 +24,11 @@ func _on_play_pressed():
 
 func _on_settings_pressed():
 	print("Settings Pressed");
-	#settings_menu.visible = true
-	#start_menu.visible = false
+	settings_menu.visible = true
 
 func _on_settings_back_pressed():
 	print("Settings back pressed");
-	#settings_menu.visible = false
-	#main_menu.visible = true
+	settings_menu.visible = false
 
 func _on_exit_pressed():
 	get_tree().quit()

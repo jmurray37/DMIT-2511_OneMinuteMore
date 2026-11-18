@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://c10pr06h37c0m"]
+
+[ext_resource type="Texture2D" uid="uid://dqn4u0ts8iamv" path="res://Assets/Sprites/UI/ui_menu_settings_bg.webp" id="1_e1hcc"]
+[ext_resource type="Script" uid="uid://c70byd5vj4ck" path="res://Scripts/settings_menu.gd" id="1_eo01c"]
+[ext_resource type="ButtonGroup" uid="uid://dxjmvhjui1c4b" path="res://Assets/Resources/dialogue_speed.tres" id="2_n03ws"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbqou"]
+font_size = 40
+font_color = Color(0.91764706, 0.19607843, 0.95686275, 1)
+outline_size = 8
+outline_color = Color(0.16470589, 0.023529412, 0.29411766, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.7490196)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eo01c"]
+font_size = 24
+font_color = Color(0.91764706, 0.19607843, 0.95686275, 1)
+outline_size = 8
+outline_color = Color(0.16470589, 0.023529412, 0.29411766, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.7490196)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y7byo"]
+font_size = 15
+font_color = Color(0.91764706, 0.19607843, 0.95686275, 1)
+outline_color = Color(0.5538999, 0.058000013, 0.58, 1)
+
+[node name="SettingsMenu" type="Control" unique_id=745431335 node_paths=PackedStringArray("screen_mode", "back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eo01c")
+screen_mode = NodePath("MarginContainer/VBoxContainer/DisplayGrid/ScreenMode")
+back_button = NodePath("MarginContainer/VBoxContainer/BackButton")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1937495691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("1_e1hcc")
+
+[node name="Settings Label" type="Label" parent="." unique_id=1262481412]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -239.0
+offset_right = 78.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_xbqou")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=44554481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 380
+theme_override_constants/margin_top = 175
+theme_override_constants/margin_right = 380
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1342340556]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="label-cat-vol" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1166100425]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_eo01c")
+horizontal_alignment = 1
+
+[node name="VolGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=362781210]
+layout_mode = 2
+theme_override_constants/h_separation = 18
+columns = 2
+
+[node name="VolumeLabels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VolGrid" unique_id=337880854]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Master Label" type="Label" parent="MarginContainer/VBoxContainer/VolGrid/VolumeLabels" unique_id=318487409]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Master"
+label_settings = SubResource("LabelSettings_y7byo")
+horizontal_alignment = 1
+
+[node name="Music Label" type="Label" parent="MarginContainer/VBoxContainer/VolGrid/VolumeLabels" unique_id=1293432818]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Music"
+label_settings = SubResource("LabelSettings_y7byo")
+
+[node name="SFX Label" type="Label" parent="MarginContainer/VBoxContainer/VolGrid/VolumeLabels" unique_id=1379738353]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SFX"
+label_settings = SubResource("LabelSettings_y7byo")
+
+[node name="VolumeSliders" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VolGrid" unique_id=435704345]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="MasterVolume" type="HSlider" parent="MarginContainer/VBoxContainer/VolGrid/VolumeSliders" unique_id=1391311312]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="MusicVolume" type="HSlider" parent="MarginContainer/VBoxContainer/VolGrid/VolumeSliders" unique_id=1729897441]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SFXVolume" type="HSlider" parent="MarginContainer/VBoxContainer/VolGrid/VolumeSliders" unique_id=1863244916]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="label-cat-disp" type="Label" parent="MarginContainer/VBoxContainer" unique_id=750882809]
+layout_mode = 2
+text = "Display"
+label_settings = SubResource("LabelSettings_eo01c")
+horizontal_alignment = 1
+
+[node name="DisplayGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=2085819927]
+layout_mode = 2
+
+[node name="ScreenMode" type="OptionButton" parent="MarginContainer/VBoxContainer/DisplayGrid" unique_id=1549381398]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless Windowed"
+popup/item_2/id = 2
+
+[node name="label-cat-gmp" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1454679796]
+layout_mode = 2
+text = "Gameplay"
+label_settings = SubResource("LabelSettings_eo01c")
+horizontal_alignment = 1
+
+[node name="GMPGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=991671168]
+layout_mode = 2
+
+[node name="Dialogue Label" type="Label" parent="MarginContainer/VBoxContainer/GMPGrid" unique_id=1505157765]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Dialogue Speed"
+label_settings = SubResource("LabelSettings_y7byo")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GMPGrid" unique_id=524957104]
+layout_mode = 2
+
+[node name="label-dia-spd-1" type="Label" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=63302961]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Slow"
+label_settings = SubResource("LabelSettings_y7byo")
+horizontal_alignment = 1
+
+[node name="dia-spd-slow" type="CheckBox" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=663005910]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_n03ws")
+
+[node name="label-dia-spd-2" type="Label" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=638942636]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Normal"
+label_settings = SubResource("LabelSettings_y7byo")
+horizontal_alignment = 1
+
+[node name="dia-spd-nrml" type="CheckBox" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=1881006395]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_n03ws")
+
+[node name="label-dia-spd-3" type="Label" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=990267626]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Fast"
+label_settings = SubResource("LabelSettings_y7byo")
+horizontal_alignment = 1
+
+[node name="dia-spd-fast" type="CheckBox" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=490059975]
+layout_mode = 2
+size_flags_horizontal = 2
+button_group = ExtResource("2_n03ws")
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1170294207]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "Back"

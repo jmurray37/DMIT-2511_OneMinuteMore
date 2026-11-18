@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="One_Minute_More"
-run/main_scene="uid://bn42o8ys60lpr"
+run/main_scene="uid://qymmexc6rp2m"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -29,6 +29,7 @@ runtime/balloon_path="res://Assets/Dialogue/DialogueBalloon.tscn"
 
 window/size/viewport_width=1078
 window/size/viewport_height=608
+window/size/mode=3
 window/size/initial_position_type=0
 window/size/resizable=false
 window/size/window_width_override=1078
