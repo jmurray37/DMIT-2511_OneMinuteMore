@@ -37,7 +37,7 @@ func _on_select_screen_mode(index: int) -> void: #Sets the Window mode to the se
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN) #Borderless Windowed
 			print("Window is: ", DisplayServer.window_get_mode())
 			
-func _on_master_volume_value_changed(value: float) -> void:
+func _on_master_volume_value_changed(value: float) -> void: #TODO hook up audio to buses, and test functions
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
 	print("Audio Bus Master:", str(AudioServer.get_bus_index("Master")))
 
@@ -49,7 +49,7 @@ func _on_sfx_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
 	print("Audio Bus SFX:", str(AudioServer.get_bus_index("SFX")))
 
-func on_dialogue_speed_selected():
+func on_dialogue_speed_selected(): #TODO Control for Dialogue speed goes here
 	var default_wpm = 35.0
 	var slow_wpm = 20.0
 	var normal_wpm = 35.0
