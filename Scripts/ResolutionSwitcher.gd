@@ -1,4 +1,3 @@
-
 extends Node
 
 @export var target_resolution: Vector2i = Vector2i(256, 256)

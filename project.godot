@@ -34,7 +34,8 @@ window/size/initial_position_type=0
 window/size/resizable=false
 window/size/window_width_override=1078
 window/size/window_height_override=608
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
 
 [dotnet]
 

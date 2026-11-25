@@ -41,6 +41,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_e1hcc")
 
 [node name="Settings Label" type="Label" parent="." unique_id=1262481412]
@@ -64,9 +66,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_constants/margin_left = 380
-theme_override_constants/margin_top = 175
-theme_override_constants/margin_right = 380
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 260
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 260
+theme_override_constants/margin_bottom = 120
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1342340556]
 layout_mode = 2
@@ -80,7 +85,7 @@ horizontal_alignment = 1
 
 [node name="VolGrid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=362781210]
 layout_mode = 2
-theme_override_constants/h_separation = 18
+theme_override_constants/h_separation = 90
 columns = 2
 
 [node name="VolumeLabels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VolGrid" unique_id=337880854]
@@ -169,6 +174,8 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GMPGrid" unique_id=524957104]
 layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
 
 [node name="label-dia-spd-1" type="Label" parent="MarginContainer/VBoxContainer/GMPGrid/HBoxContainer" unique_id=63302961]
 layout_mode = 2
