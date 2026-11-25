@@ -1,4 +1,4 @@
-
+class_name DialogueControl
 extends Control
 
 signal dialogue_finished

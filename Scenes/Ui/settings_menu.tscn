@@ -25,7 +25,7 @@ font_size = 15
 font_color = Color(0.91764706, 0.19607843, 0.95686275, 1)
 outline_color = Color(0.5538999, 0.058000013, 0.58, 1)
 
-[node name="SettingsMenu" type="Control" unique_id=745431335 node_paths=PackedStringArray("screen_mode", "back_button")]
+[node name="SettingsMenu" type="Control" unique_id=745431335 node_paths=PackedStringArray("master_volume", "music_volume", "sfx_volume", "screen_mode", "back_button", "dia_spd_slow", "dia_spd_nrml", "dia_spd_fast")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,8 +33,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eo01c")
+master_volume = NodePath("MarginContainer/VBoxContainer/VolGrid/VolumeSliders/MasterVolume")
+music_volume = NodePath("MarginContainer/VBoxContainer/VolGrid/VolumeSliders/MusicVolume")
+sfx_volume = NodePath("MarginContainer/VBoxContainer/VolGrid/VolumeSliders/SFXVolume")
 screen_mode = NodePath("MarginContainer/VBoxContainer/DisplayGrid/ScreenMode")
 back_button = NodePath("MarginContainer/VBoxContainer/BackButton")
+dia_spd_slow = NodePath("MarginContainer/VBoxContainer/GMPGrid/HBoxContainer/dia-spd-slow")
+dia_spd_nrml = NodePath("MarginContainer/VBoxContainer/GMPGrid/HBoxContainer/dia-spd-nrml")
+dia_spd_fast = NodePath("MarginContainer/VBoxContainer/GMPGrid/HBoxContainer/dia-spd-fast")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1937495691]
 layout_mode = 1
